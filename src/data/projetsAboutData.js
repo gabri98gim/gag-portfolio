@@ -1,35 +1,25 @@
-import urbanStyle from "../assets/img-projects/urbanStyle.png";
-import imgNote from "../assets/img-projects/note-app.png";
-import ReactEcommerce from "../assets/img-projects/ecommers.jpg";
+// Importamos la imagen igual que en el otro archivo
+import cineImg from "../assets/img-projects/cine.png"; 
 
 export const proyectos = [
   {
-    titulo: "React Tiendita",
-    imagen: ReactEcommerce.src,
-    tecnologias: ["React", "Tailwind", "Node.js" ,"Express", "MongoDB", "jwt"],
-    demo: "https://react-e-commerce-three-phi.vercel.app",
-    codigo: "https://github.com/Lautaro-R-collins/React-E-commerce.git",
+    titulo: "Your Directory",
+    descripcion:
+      "Plataforma interactiva de cine con API en tiempo real.", // He resumido la descripción un poco para la Home
+    imagen: cineImg.src, 
+    tecnologias: ["HTML", "CSS", "JavaScript", "API"],
+    demo: "https://proyecto-cine-your-directory.vercel.app/",
+    codigo: "https://github.com/gabri98gim/proyecto-cine-your-directory",
+    categoria: "frontend",
   },
   {
-    titulo: "E-commerce Urban Style",
-    descripcion: "Descripción breve del proyecto 1.",
-    imagen: urbanStyle.src,
-    tecnologias: ["React", "Tailwind", "Firebase"],
-    demo: "https://proyecto-final-rodriguez-sable.vercel.app/",
-    codigo: "https://github.com/Lautaro-R-collins/ProyectoFinal-Rodriguez.git",
-  },
-  {
-    titulo: "App organizacion",
-    imagen: imgNote.src,
-    tecnologias: ["React", "Tailwind", "Express", "MongoDB"],
-    demo: "https://front-react-todo.onrender.com",
-    codigo: "https://github.com/Lautaro-R-collins/Front-react-todo",
-  },
-  {
-    titulo: "API REST para Ecommerce",
-    imagen: "https://miro.medium.com/1*47S4iWVwTicFkFL4-Z4uAA.png",
-    tecnologias: ["Express", "Node.js", "MongoDB", "Mongoose"],
-    demo: "https://react-e-commerce-three-phi.vercel.app/",
-    codigo: "https://github.com/Lautaro-R-collins/ApiRest-Ecommerce.git",
+    titulo: "Próximamente",
+    descripcion:
+      "Migrando más proyectos...",
+    imagen: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=1000",
+    tecnologias: ["WIP"],
+    demo: "#",
+    codigo: "#",
+    categoria: "frontend",
   },
 ];

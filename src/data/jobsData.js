@@ -1,34 +1,13 @@
 export const jobs = [
   {
-    title: "Frontend Developer - Neowyze",
-    time: ["12/2024 - 05/2025"],
+    title: "Freelance / Proyectos Personales",
+    time: ["Actualidad"],
     description:
-      "Mis tareas en Neowyze consisten en desarrollar webs responsivas basadas en diseños proporcionados en Figma, utilizando Astro, React, Tailwind y otras librerías frontend.",
+      "Desarrollo de interfaces web y creación de contenido audiovisual.",
     list: [
-      "Para el flujo de trabajo, utilizo Jira como herramienta de gestión y Git/GitHub como sistema de control de versiones.",
-      "Trabajo bajo la metodología ágil Scrum, con sprints de 2 semanas y dos reuniones diarias (dailies) para planificar el proyecto y presentar avances",
+      "Diseño y maquetación con Astro y Tailwind.",
+      "Edición de vídeo y postproducción.",
     ],
   },
-  {
-    title: "Frontend Developer - Vegna",
-    time: ["05/2024 - 02/2024"],
-    description: "Desarrollo y mantenimiento de interfaces de usuario con:",
-    list: ["JavaScript - TypeScript", "React - Next.js", "Tailwind", "Shadcn"],
-  },
-  {
-    title: "Frontend Developer - Igrowker",
-    time: ["07/2022 - 08/2022"],
-    description: "Desarrollo y mantenimiento de interfaces de usuario con",
-    list: ["React - React Router - Context api - CSS - Material UI"],
-  },
-  {
-    title: " Web Developer - NoCountry",
-    time: ["03/2022 - 06/2022"],
-    description:
-      "Desarrollo de aplicaciones web responsivas MVP fullstack usando para su desarrollo tecnologías como",
-    list: [
-      "Frontend : React - React Router - Context api - tailwindcss",
-      "Backend : API REST con Express.js, MongoDB",
-    ],
-  },
+  // Puedes añadir más objetos {} si tienes más trabajos
 ];
