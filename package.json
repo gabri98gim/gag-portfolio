@@ -1,7 +1,8 @@
 {
-  "name": "lrc-portfolio",
+  "name": "gag-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "author": "Gabri",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
