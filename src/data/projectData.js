@@ -1,5 +1,5 @@
 // 1. IMPORTAMOS TU FOTO (Asegúrate de que el nombre coincida)
-import cineImg from "../assets/img-projects/cine.png"; 
+import cineImg from "../assets/img-projects/cine.png";
 
 export const proyectos = [
   {
@@ -13,10 +13,21 @@ export const proyectos = [
     categoria: "frontend",
   },
   {
-    titulo: "Próximamente",
+    titulo: "Cinematic Portfolio",
     descripcion:
-      "Trabajando en nuevos proyectos para mostrar mis habilidades en React y Astro.",
-    imagen: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=1000",
+      "Una experiencia web inmersiva con temática cinematográfica. Diseño moderno con 'Glassmorphism', animaciones fluidas y una paleta de colores eléctrica.",
+    imagen:
+      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800",
+    tecnologias: ["Astro", "TailwindCSS", "React"],
+    demo: "#",
+    codigo: "#",
+    categoria: "design",
+  },
+  {
+    titulo: "Próximamente",
+    descripcion: "Trabajando en nuevas ideas y conceptos creativos.",
+    imagen:
+      "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=800",
     tecnologias: ["WIP", "Loading..."],
     demo: "#",
     codigo: "#",

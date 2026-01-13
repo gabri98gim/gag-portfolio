@@ -22,7 +22,7 @@
         { name: "Next.js", icon: "nextjs" },
         { name: "Tailwind", icon: "tailwindcss" },
         { name: "Node.js", icon: "nodejs" },
-        { name: "Express", icon: "express" },
+        { name: "WordPress", icon: "wordpress" },
         { name: "Git", icon: "git" },
       ].map((skill) => (
         <div class="relative group">
@@ -34,7 +34,9 @@
               alt={skill.name}
               class="w-12 h-12"
             />
-            <p class="mt-2 text-white text-lg font-semibold drop-shadow-[1px_1px_0_#7836cf]">{skill.name}</p>
+            <p class="mt-2 text-white text-lg font-semibold drop-shadow-[1px_1px_0_#7836cf]">
+              {skill.name}
+            </p>
           </div>
         </div>
       ))
