@@ -1,36 +1,48 @@
-// 1. IMPORTAMOS TU FOTO (Asegúrate de que el nombre coincida)
+// --- IMPORTACIÓN DE TUS IMÁGENES REALES ---
 import cineImg from "../assets/img-projects/cine.png";
+import factosImg from "../assets/img-projects/factos.png";
+import italianoImg from "../assets/img-projects/italiano.png";
+import loveoImg from "../assets/img-projects/loveo.png";
 
 export const proyectos = [
   {
+    titulo: "Factos",
+    descripcion:
+      "🏆 GANADOR CodeJam: Premio a Mejor Diseño y Usabilidad. Trivia interactiva desarrollada bajo presión en hackathon, destacando por su interfaz intuitiva y pulida.",
+    imagen: factosImg.src, 
+    tecnologias: ["React", "Tailwind", "Vite"],
+    demo: "https://factos-three.vercel.app/",
+    codigo: "https://github.com/gabri98gim/factos",
+    categoria: "frontend",
+  },
+  {
     titulo: "Your Directory",
     descripcion:
-      "Plataforma interactiva de cine. Permite explorar tendencias, buscar películas y ver detalles en tiempo real consumiendo una API externa.",
-    imagen: cineImg.src, // <--- Aquí Astro optimiza tu imagen automáticamente
+      "Plataforma de cine con consumo de API en tiempo real. Permite explorar tendencias, buscar películas y ver detalles detallados.",
+    imagen: cineImg.src, 
     tecnologias: ["HTML", "CSS", "JavaScript", "API REST"],
     demo: "https://proyecto-cine-your-directory.vercel.app/",
     codigo: "https://github.com/gabri98gim/proyecto-cine-your-directory",
     categoria: "frontend",
   },
   {
-    titulo: "Cinematic Portfolio",
+    titulo: "Ristorante Italiano",
     descripcion:
-      "Una experiencia web inmersiva con temática cinematográfica. Diseño moderno con 'Glassmorphism', animaciones fluidas y una paleta de colores eléctrica.",
-    imagen:
-      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800",
-    tecnologias: ["Astro", "TailwindCSS", "React"],
-    demo: "#",
-    codigo: "#",
-    categoria: "design",
+      "E-commerce gastronómico con diseño 'Pixel Perfect'. Gestión de carta digital y carrito de compras con una estética cuidada y apetecible.",
+    imagen: italianoImg.src, 
+    tecnologias: ["React", "Tailwind", "Responsive"],
+    demo: "https://ecommerce-ristorante-italiano.vercel.app/",
+    codigo: "https://github.com/gabri98gim/ecommerce-ristorante-italiano",
+    categoria: "frontend",
   },
   {
-    titulo: "Próximamente",
-    descripcion: "Trabajando en nuevas ideas y conceptos creativos.",
-    imagen:
-      "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=800",
-    tecnologias: ["WIP", "Loading..."],
-    demo: "#",
-    codigo: "#",
+    titulo: "Lo Veo y Te Digo",
+    descripcion:
+      "Blog de reseñas multimedia. Un espacio personal para crítica de cine y series con un diseño editorial moderno y limpio.",
+    imagen: loveoImg.src,
+    tecnologias: ["HTML", "CSS", "JavaScript"],
+    demo: "https://lo-veo-y-te-digo.vercel.app/",
+    codigo: "https://github.com/gabri98gim/lo-veo-y-te-digo",
     categoria: "frontend",
   },
 ];
