@@ -1,56 +1,66 @@
 ---
-import { HiArrowRight } from "react-icons/hi";
-
 export interface Props {
   titulo: string;
+  descripcion: string; // <-- Ahora sí aceptamos descripción
   imagen: string;
   tecnologias: string[];
   demo: string;
   codigo: string;
+  index: number;
 }
 
-const { titulo, imagen, tecnologias, demo, codigo } = Astro.props;
+const { titulo, descripcion, imagen, tecnologias, demo, codigo } = Astro.props;
 ---
 
 <div
-  class="group flex w-full max-w-md mx-auto flex-col overflow-hidden rounded-xl bg-gray-900 border border-none transition-all hover:scale-[1.015] drop-shadow-[4px_4px_0_#7836cf]"
+  class="group relative flex w-full flex-col overflow-hidden rounded-2xl bg-slate-900/40 backdrop-blur-md border border-white/10 transition-all duration-500 hover:border-[#7836cf]/50 hover:shadow-[0_0_30px_rgba(120,54,207,0.2)]"
 >
-  <img
-    src={imagen}
-    alt={`Proyecto: ${titulo}`}
-    class="h-52 p-3 w-full object-cover rounded-2xl"
-  />
+  <div class="aspect-video w-full overflow-hidden border-b border-white/5">
+    <img
+      src={imagen}
+      alt={`Proyecto: ${titulo}`}
+      class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+    />
+  </div>
 
-  <div class="flex flex-col grow p-3">
-    <h3 class="text-lg font-semibold mb-2 text-white drop-shadow-[1px_1px_0_#7836cf]">{titulo}</h3>
+  <div class="flex flex-col grow p-8">
+    <h3
+      class="text-2xl font-bold mb-3 text-white group-hover:text-[#a27ed1] transition-colors drop-shadow-[2px_2px_0_rgba(0,0,0,0.5)]"
+    >
+      {titulo}
+    </h3>
 
     <div class="flex flex-wrap gap-2 mb-4">
       {
         tecnologias.map((tech) => (
-          <span class="rounded-md bg-[#7836cf]/20 text-[#a27ed1] px-2 py-0.5 text-xs font-semibold">
+          <span class="rounded-full bg-[#7836cf]/10 border border-[#7836cf]/20 text-[#a27ed1] px-3 py-1 text-xs font-medium uppercase tracking-wider">
             {tech}
           </span>
         ))
       }
     </div>
 
-    <div class="mt-auto flex justify-between gap-3">
+    <p class="text-gray-400 text-sm leading-relaxed mb-8 line-clamp-3">
+      {descripcion}
+    </p>
+
+    <div class="mt-auto flex gap-4">
       <a
         href={demo}
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+        class="flex-1 bg-[#7836cf] text-white py-3 rounded-xl text-sm font-bold hover:bg-[#6329b1] transition-all text-center shadow-lg shadow-[#7836cf]/30"
       >
-        Demo
+        Live Demo
       </a>
 
       <a
         href={codigo}
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full text-center border border-[#7836cf] text-[#7836cf] py-1.5 rounded-md text-sm font-semibold hover:bg-[#7836cf] hover:text-gray-900 transition-colors"
+        class="flex-1 bg-white/5 text-white border border-white/10 py-3 rounded-xl text-sm font-bold hover:bg-white/10 transition-all text-center"
       >
-        Código
+        GitHub
       </a>
     </div>
   </div>

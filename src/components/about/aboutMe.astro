@@ -1,41 +1,85 @@
 ---
-import MiFoto from "../../assets/img/MiFoto.png"; // <--- Asegúrate que tu foto se llame así en la carpeta
+import MiFoto from "../../assets/img/MiFoto.png";
+import { HiDownload } from "react-icons/hi";
+
+// Nombre exacto de tu archivo en la carpeta public
+const cvPath = "/CV Sector TIC Gabriel Andreu Gimeno 2026.pdf";
 ---
 
-<div
-  class="mx-auto mt-20 flex max-w-6xl flex-col items-center gap-8 px-6 lg:flex-row "
->
+<section class="mx-auto mt-24 max-w-6xl px-6">
   <div
-    class="border-primary h-64 w-64 overflow-hidden rounded-2xl shadow-lg md:h-96 md:w-96 drop-shadow-[4px_4px_0_#7836cf]"
+    class="relative overflow-hidden rounded-3xl bg-slate-900/40 backdrop-blur-xl border border-white/10 p-8 md:p-12 shadow-2xl"
   >
-    <img
-      src={MiFoto.src}
-      alt="Foto de Gabri" 
-      class="h-full w-full object-cover object-[center_15%]" 
-    />
+    <div
+      class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#7836cf]/10 blur-3xl"
+    >
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center gap-12 lg:flex-row">
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#7836cf] to-[#a27ed1] opacity-30 blur transition duration-500 group-hover:opacity-60"
+        >
+        </div>
+        <div
+          class="relative h-64 w-64 overflow-hidden rounded-2xl md:h-80 md:w-80 border border-white/10 shadow-2xl"
+        >
+          <img
+            src={MiFoto.src}
+            alt="Foto de Gabri"
+            class="h-full w-full object-cover object-[center_15%] transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      </div>
+
+      <div class="flex-1 text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-white mb-6">
+          Sobre <span
+            class="text-[#7836cf] drop-shadow-[0_0_10px_rgba(120,54,207,0.3)]"
+            >Mí</span
+          >
+        </h2>
+
+        <div class="space-y-4 text-gray-300 leading-relaxed text-lg">
+          <p>
+            Soy <span class="text-white font-semibold">Gabriel</span>, un perfil
+            híbrido entre el
+            <span class="text-white font-semibold">Desarrollo Front End</span> y la
+            <span class="text-white font-semibold">Producción Audiovisual</span
+            >.
+          </p>
+          <p>
+            Mi enfoque une la lógica de la programación con mi ojo de
+            <span class="text-[#a27ed1]">Filmmaker</span> para crear experiencias
+            digitales que narren una historia.
+          </p>
+          <p>
+            Trabajo con tecnologías como <span class="text-white"
+              >Astro, React y Tailwind CSS</span
+            >, priorizando siempre el detalle y la experiencia de usuario.
+          </p>
+        </div>
+
+        <div
+          class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-5"
+        >
+          <a
+            href={cvPath}
+            download="CV_Gabriel_Andreu_2026.pdf"
+            class="flex items-center justify-center gap-2 bg-[#7836cf] text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-[#7836cf]/30 hover:bg-[#6329b1] hover:-translate-y-1 transition-all active:scale-95 cursor-pointer"
+          >
+            <HiDownload className="h-5 w-5" />
+            Descargar CV
+          </a>
+
+          <a
+            href="/contact"
+            class="flex items-center justify-center bg-white/5 text-white border border-white/10 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all cursor-pointer"
+          >
+            Hablemos
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="flex-1 text-center text-gray-300 lg:text-left">
-    <h2 class="text-3xl font-bold text-white">
-      Sobre <span class="text-white text-shadow">Mí</span>
-    </h2>
-    
-    <p class="mt-4">
-      Soy <span class="text-primary font-semibold">Gabriel</span>, un perfil híbrido entre el 
-      <span class="text-primary font-semibold">Desarrollo Front End</span> y la 
-      <span class="text-primary font-semibold">Producción Audiovisual</span>. 
-      Mi enfoque no es solo escribir código, sino crear experiencias digitales que narren una historia y atrapen visualmente al usuario.
-    </p>
-
-    <p class="mt-2">
-      Combino la lógica de programación con mi ojo de <span class="text-primary font-semibold">Filmmaker</span>. 
-      Trabajo con tecnologías modernas como <span class="text-primary font-semibold">Astro, React y Tailwind CSS</span>, 
-      integrando diseño y funcionalidad. Para mí, una web no es solo estructura, es ritmo, composición y movimiento.
-    </p>
-
-    <p class="mt-2">
-      Siempre estoy <span class="text-primary font-semibold">aprendiendo</span> y buscando nuevas formas de fusionar 
-      la creatividad visual con la potencia del software. Mi objetivo es aportar valor en proyectos donde el <span class="text-primary font-semibold">detalle</span> y la <span class="text-primary font-semibold">experiencia de usuario</span> sean la prioridad.
-    </p>
-  </div>
-</div>
+</section>

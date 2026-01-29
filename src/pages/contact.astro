@@ -1,80 +1,126 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MiFoto from "../assets/img/MiFoto.png";
-import CopyMail from "../components/links/copyMail.jsx";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaXTwitter,
+  FaInstagram,
+} from "react-icons/fa6";
 
 const links = [
   {
-    href: "https://www.linkedin.com/in/lautaro-rodr%C3%ADguez-collins-40505624a/",
+    href: "https://www.linkedin.com/in/gabriel-andreu-gimeno-ba674824a/",
+    icon: FaLinkedinIn,
     label: "LinkedIn",
   },
-  { href: "https://github.com/Lautaro-R-collins", label: "GitHub" },
-  { href: "https://x.com/lautarodevelops/", label: "Twitter" },
-  { href: "mailto:lautarodevelops@gmail.com", label: "Email" },
+  { href: "https://github.com/gabri98gim", icon: FaGithub, label: "GitHub" },
+  { href: "https://x.com/gandreu8", icon: FaXTwitter, label: "Twitter" },
+  {
+    href: "https://www.instagram.com/gabri98gim/",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
 ];
 ---
 
 <Layout>
   <section
-    class="bg-gray-900 flex min-h-screen flex-col items-center justify-center px-6"
+    class="bg-gray-950 flex min-h-screen flex-col items-center justify-center px-6 py-20"
   >
-    <div class="mb-2 mt-11">
-      <div class="mb-2 mt-11">
-        <div class="relative flex items-center justify-center">
-          <!-- Foto con borde -->
-<img
-  src={MiFoto.src}
-  alt="Foto de Gabri"  // 
-  class="border-primary h-32 w-32 rounded-full shadow-lg object-cover object-[center_15%]"
-/>
-
-          <!-- Texto circular alrededor de la foto -->
-          <svg
-            viewBox="0 0 200 200"
-            class="animate-spin-slow absolute h-48 w-48"
-          >
-            <path
-              id="circlePathText"
-              d="M100,100 m-77,0 a77,77 0 1,1 154,0 a77,77 0 1,1 -154,0"
-              fill="none"></path>
-            <text fill="#69c7c7" font-size="18" font-weight="bold">
-              <textPath href="#circlePathText" startOffset="0%">
-                ✦ Hola ! ✦ Estoy disponible para nuevas oportunidades!
-              </textPath>
-            </text>
-          </svg>
+    <div class="mb-10 relative">
+      <div class="relative flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full bg-[#7836cf]/20 blur-xl">
         </div>
+        <img
+          src={MiFoto.src}
+          alt="Foto de Gabri"
+          class="border-2 border-[#7836cf] h-32 w-32 rounded-full shadow-2xl object-cover object-[center_15%] relative z-10"
+        />
       </div>
     </div>
 
-    <CopyMail client:visible />
+    <div
+      class="w-full max-w-2xl bg-slate-900/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl"
+    >
+      <h2 class="text-3xl font-bold text-white mb-6 text-center">
+        Envíame un <span class="text-[#7836cf]">Mensaje</span>
+      </h2>
 
-    <!-- Lista de Links -->
-    <div class="w-full max-w-xl space-y-4">
-      {
-        links.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block font-bold w-full rounded-lg bg-primary hover:bg-secondary drop-shadow-[2px_2px_0_#0debd8] px-6 py-3 text-center text-white transition "
+      <form
+        action="https://formspree.io/f/mlgnnzjy"
+        method="POST"
+        class="space-y-5"
+      >
+        <div>
+          <label class="block text-gray-400 text-sm font-medium mb-2"
+            >Nombre</label
           >
-            {link.label}
-          </a>
-        ))
-      }
+          <input
+            type="text"
+            name="name"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7836cf] transition-colors"
+            placeholder="Tu nombre"
+          />
+        </div>
+        <div>
+          <label class="block text-gray-400 text-sm font-medium mb-2"
+            >Email</label
+          >
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7836cf] transition-colors"
+            placeholder="tu@email.com"
+          />
+        </div>
+        <div>
+          <label class="block text-gray-400 text-sm font-medium mb-2"
+            >Mensaje</label
+          >
+          <textarea
+            name="message"
+            rows="4"
+            required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#7836cf] transition-colors"
+            placeholder="¿En qué puedo ayudarte?"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-[#7836cf] hover:bg-[#6329b1] text-white font-bold py-4 rounded-xl shadow-lg shadow-[#7836cf]/20 transition-all active:scale-95"
+        >
+          Enviar Mensaje
+        </button>
+      </form>
+
+      <div class="relative my-10">
+        <div class="absolute inset-0 flex items-center">
+          <span class="w-full border-t border-white/10"></span>
+        </div>
+        <div class="relative flex justify-center text-xs uppercase">
+          <span class="bg-[#0f172a] px-3 text-gray-500 italic"
+            >O hablemos por redes</span
+          >
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-10">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-[#7836cf] transition-all duration-300 hover:scale-125 group"
+              aria-label={link.label}
+            >
+              <link.icon className="h-9 w-9 drop-shadow-sm group-hover:drop-shadow-[0_0_10px_rgba(120,54,207,0.6)]" />
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .animate-spin-slow {
-    animation: spin 25s linear infinite;
-  }
-
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
