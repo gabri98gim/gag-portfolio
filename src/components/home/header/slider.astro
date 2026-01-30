@@ -1,35 +1,80 @@
 ---
 const technologies = [
-  "astro",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
-  "git",
-  "supabase",
-  "mysql",
-  "bash",
+  { name: "HTML5", path: "html5/html5-original.svg" },
+  { name: "CSS3", path: "css3/css3-original.svg" },
+  { name: "JavaScript", path: "javascript/javascript-original.svg" },
+  { name: "TypeScript", path: "typescript/typescript-original.svg" },
+  { name: "React", path: "react/react-original.svg" },
+  { name: "Angular", path: "angularjs/angularjs-original.svg" },
+  { name: "Astro", path: "astro/astro-original.svg" },
+  { name: "Next.js", path: "nextjs/nextjs-original.svg", invert: true },
+  { name: "Vite", path: "vitejs/vitejs-original.svg" },
+  { name: "Tailwind", path: "tailwindcss/tailwindcss-original.svg" },
+  { name: "Node.js", path: "nodejs/nodejs-original.svg" },
+  { name: "Git", path: "git/git-original.svg" },
+  { name: "WordPress", path: "wordpress/wordpress-plain.svg", invert: true },
+  { name: "Python", path: "python/python-original.svg" },
+
+  // --- PACK ADOBE (Revisado y Arreglado) ---
+
+  // Photoshop: El de DevIcon funciona perfecto (caja azul).
+  { name: "Photoshop", path: "photoshop/photoshop-original.svg" },
+
+  // Illustrator: ARREGLADO. Usamos el oficial de Wikimedia (Caja Naranja).
+  {
+    name: "Illustrator",
+    url: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg",
+  },
+
+  // InDesign: El enlace que pusimos antes funcionó, así que lo mantenemos (Caja Rosa).
+  {
+    name: "InDesign",
+    url: "https://cdn.worldvectorlogo.com/logos/adobe-indesign-cc-icon.svg",
+  },
+
+  {
+    name: "Premiere",
+    url: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
+  },
+
+  {
+    name: "After Effects",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/960px-Adobe_After_Effects_CC_icon.svg.png",
+  },
 ];
 ---
 
-<div class="relative overflow-x-hidden px-8 py-8">
-  <div class="animate-scroll hover:animate-paused flex w-max gap-12 md:gap-20">
+<div class="w-full py-20 overflow-hidden relative">
+  <div
+    class="absolute top-0 left-0 z-10 h-full w-32 bg-gradient-to-r from-gray-950 to-transparent pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-0 z-10 h-full w-32 bg-gradient-to-l from-gray-950 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <div class="flex w-max animate-infinite-scroll hover:animate-paused gap-10">
+    {/* Renderizamos la lista 2 veces para el bucle infinito */}
     {
-      technologies.concat(technologies, technologies).map((tech) => (
-        <div class="group flex items-center gap-2 transition-all duration-300">
-          <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
-            class="h-7 w-auto object-contain  transition-transform group-hover:scale-110"
-            width="30"
-            height="30"
-            loading="lazy"
-          />
-          <span class="text-lg font-medium text-white">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+      [...technologies, ...technologies].map((tech) => (
+        <div class="flex flex-col items-center gap-4 group cursor-default">
+          {/* CAJA DEL ICONO */}
+          <div class="h-24 w-24 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-lg group-hover:bg-white/10 group-hover:border-[#7836cf]/50 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(120,54,207,0.3)] transition-all duration-300">
+            <img
+              src={
+                tech.url
+                  ? tech.url
+                  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.path}`
+              }
+              alt={tech.name}
+              class={`h-14 w-14 object-contain transition-transform duration-300 ${tech.invert ? "invert" : ""}`}
+              loading="lazy"
+            />
+          </div>
+
+          <span class="text-sm font-semibold text-gray-400 group-hover:text-white transition-colors tracking-wide">
+            {tech.name}
           </span>
         </div>
       ))
@@ -37,8 +82,8 @@ const technologies = [
   </div>
 </div>
 
-<style is:global>
-  @keyframes scroll {
+<style>
+  @keyframes infinite-scroll {
     from {
       transform: translateX(0);
     }
@@ -46,13 +91,12 @@ const technologies = [
       transform: translateX(-50%);
     }
   }
-  .animate-scroll {
-    animation: scroll 60s linear infinite;
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 60s linear infinite;
   }
 
-  @media (min-width: 768px) {
-    .animate-scroll {
-      animation-duration: 80s;
-    }
+  .animate-paused {
+    animation-play-state: paused;
   }
 </style>

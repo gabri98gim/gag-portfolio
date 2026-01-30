@@ -36,21 +36,21 @@ const CategoryIcons = {
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState(null);
 
-  const skills = {
+const skills = {
     "¿Qué tecnologías uso?": [
-      "Actualmente trabajo con tecnologías como React, Next.js, Vue.js, Astro, tailwind, Boostrap y demas librerias y frameworks para el frontend y en el backend trabajo con Node.js, Express, MongoDB, Firebase, entre otras.",
+      "Domino el desarrollo frontend con HTML, CSS, JavaScript y TypeScript. Utilizo frameworks y librerías modernas como React, Next.js y Astro para crear interfaces rápidas. También manejo el diseño con Tailwind CSS y la gestión de proyectos con Git y WordPress.",
     ],
     "Mi Experiencia": [
-      "Tengo experiencia trabajando en startups y consultoras tecnológicas, desarrollando y maquetando sitios web a partir de diseños en Figma. Para ello, utilizo tecnologías frontend como Astro y React, junto con Tailwind CSS y otras librerías y frameworks para el estilizado y la optimización de interfaces.",
+      "Vengo del mundo del diseño gráfico y la realización audiovisual, lo que me otorga una visión polivalente única. Actualmente me formo como desarrollador Full Stack, combinando mi capacidad técnica en el código con mi experiencia previa en edición de video (AVID, Premiere) y diseño editorial.",
     ],
-    "Mi formacion": [
-      "Estudié una tecnicatura en automatización de grado universitaria en el ITU, lo que me brindó las bases en programación. Posteriormente, decidí enfocarme en el desarrollo web y de software. Ademas, realicé diversos cursos, diplomados y capacitaciones en grandes universidades Argentinas, como la UTN, tambien, complemento mi formación con el aprendizaje autodidacta, lo que me permite mantenerme actualizado con los avances tecnológicos en el desarrollo de software.",
+    "Mi formación": [
+      "Soy Técnico Superior en Diseño y Edición de Publicaciones Impresas y Multimedia, y Técnico Superior en Realización de Audiovisuales. He complementado mi perfil con formación en el programa Pro-In TIC en Desarrollo Web Front End (300h) y Desarrollo de Software con Metodologías Ágiles.",
     ],
     "¿Cómo trabajo en equipo?": [
-      "Tengo experiencia trabajando en equipos multidisciplinarios, donde me he encargado del desarrollo frontend de aplicaciones web. Para ello, utilizo metodologías ágiles como Scrum y Kanban, además de herramientas de control de versiones como Git y GitHub para gestionar el flujo de trabajo. También cuento con experiencia en el uso de herramientas de gestión de proyectos como Trello y Jira, facilitando la organización y colaboración dentro del equipo.",
+      "Me considero un profesional comunicativo y flexible, acostumbrado a colaborar en entornos creativos y técnicos. Entiendo que un buen producto digital nace del compromiso grupal y la responsabilidad individual, aportando siempre una actitud resolutiva y puntual.",
     ],
-    "Metodolgias Agiles": [
-      "He trabajado con metodologías ágiles como Scrum y Kanban. En Scrum, participé en sprints de dos semanas, donde al finalizar cada sprint realizaba un pull request (PR) con mi trabajo, el cual pasaba por una fase de revisión y corrección antes de ser fusionado y enviado a producción. También he trabajado con Kanban, utilizando tableros para gestionar tareas y moverlas según su estado de progreso. Además, participé en reuniones diarias (dailies) para planificar y reportar avances del proyecto, asegurando una comunicación eficiente dentro del equipo.",
+    "Metodologías Ágiles": [
+      "Cuento con formación específica en Metodologías Ágiles, especialmente en SCRUM (100h). Estoy habituado a trabajar con ciclos de desarrollo dinámicos, priorizando tareas de forma eficiente y participando activamente en el flujo de trabajo del equipo para optimizar resultados.",
     ],
   };
 
