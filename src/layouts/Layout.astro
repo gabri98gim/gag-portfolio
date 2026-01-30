@@ -12,8 +12,22 @@ import Footer from "../components/commons/footer/footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Gabriel Andreu Gimeno- GAG</title>
+    <script is:inline>
+      // 1. Check localStorage
+      // 2. If NO localStorage, default to DARK (User preference)
+      // 3. If localStorage says 'dark', be DARK
+      // 4. If localStorage says 'light', be LIGHT
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        !localStorage.getItem("color-theme")
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body class="bg-gray-950 text-white">
+  <body>
     <Navbar />
     <slot />
     <Footer />

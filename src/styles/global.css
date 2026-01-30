@@ -1,83 +1,176 @@
 @import "tailwindcss";
 
+/* 1. ACTIVAR EL MODO OSCURO MANUAL (Obligatorio para el botón en Tailwind v4) */
+@variant dark (&:where(.dark, .dark *));
+
+/* 2. SISTEMA DE COLORES DINÁMICO - ARREGLADO PARA CONTRASTES */
 :root {
-  /* Cinematic & Electric Palette */
-  --color-bg: #020617; /* Slate-950: Deep Navy */
-  --color-primary: #06b6d4; /* Cyan-500: Electric Cyan */
-  --color-secondary: #f97316; /* Orange-500: Sunset Orange/Gold */
-
-  /* Derived colors for hover/interaction */
-  --color-primary-dark: #0891b2; /* Cyan-600 */
-  --color-secondary-dark: #ea580c; /* Orange-600 */
+  /* --- MODO CLARO (Default / Día) --- */
+  --color-bg: #ffffff;              /* Fondo Blanco Puro */
+  --color-text: #0f172a;            /* Texto Gris MUY Oscuro (excelente contraste) */
+  --color-text-muted: #475569;      /* Texto secundario (slate-600) */
+  --color-primary: #2c77f2;         /* Tu Azul Royal */
+  --color-secondary: #f97316;       /* Naranja para detalles */
+  --color-card: #f8fafc;            /* Fondo para cards en modo claro */
+  --color-border: #e2e8f0;          /* Bordes sutiles */
+  
+  /* Sombra para modo claro: sutil y elegante */
+  --shadow-color: rgba(44, 119, 242, 0.2); 
+  
+  /* GRADIENTE DEL HERO EN MODO CLARO */
+  --hero-gradient-from: rgba(147, 197, 253, 0.3);  /* Azul claro */
+  --hero-gradient-mid: rgba(196, 181, 253, 0.3);   /* Morado claro */
+  --hero-gradient-to: rgba(165, 243, 252, 0.3);    /* Cyan claro */
 }
 
+/* --- MODO OSCURO (Noche / .dark) --- */
+.dark {
+  --color-bg: #020617;              /* Tu Fondo Original (Slate-950) */
+  --color-text: #f8fafc;            /* Texto casi blanco (slate-50) */
+  --color-text-muted: #cbd5e1;      /* Texto secundario (slate-300) */
+  --color-primary: #3b82f6;         /* Azul más brillante para dark mode */
+  --color-secondary: #fb923c;       /* Naranja más brillante */
+  --color-card: #0f172a;            /* Fondo para cards en modo oscuro */
+  --color-border: #1e293b;          /* Bordes en modo oscuro */
+
+  /* Sombra para modo oscuro: tipo neón sólido */
+  --shadow-color: rgba(59, 130, 246, 0.4); 
+  
+  /* GRADIENTE DEL HERO EN MODO OSCURO */
+  --hero-gradient-from: rgba(59, 130, 246, 0.15);
+  --hero-gradient-mid: rgba(139, 92, 246, 0.15);
+  --hero-gradient-to: rgba(6, 182, 212, 0.15);
+}
+
+/* 3. ESTILOS BASE DEL BODY */
+html,
 body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+
+  /* AQUÍ LA MAGIA: Usamos las variables en lugar de colores fijos */
   background-color: var(--color-bg);
-  color: white; /* Default text color */
+  color: var(--color-text);
+  
+  /* Transición suave de 0.3s al cambiar el tema (evita flasheos) */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.primary {
-  color: var(--color-primary);
+/* 4. CLASES DE UTILIDAD PERSONALIZADAS */
+
+/* Colores de texto */
+.text-custom {
+  color: var(--color-text);
 }
-.secondary {
-  color: var(--color-secondary);
+
+.text-muted {
+  color: var(--color-text-muted);
 }
-.bg-primary {
-  background-color: var(--color-primary);
-}
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
+
 .text-primary {
   color: var(--color-primary);
 }
 
-/* reglas hover */
-.hover-text-secondary:hover {
-  color: var(--color-primary); /* Swap to primary on hover for interaction */
-}
-.hover-bg-secondary:hover {
-  background-color: var(--color-primary);
-}
-.hover\:bg-secondary:hover {
-  background-color: var(--color-secondary);
-}
-.hover\:text-secondary:hover {
+.text-secondary {
   color: var(--color-secondary);
 }
 
+/* Backwards compatibility */
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+/* Fondos */
+.bg-custom {
+  background-color: var(--color-bg);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-card {
+  background-color: var(--color-card);
+}
+
+/* Bordes */
+.border-custom {
+  border-color: var(--color-border);
+}
+
+/* Hover Effects */
+.hover-text-primary:hover {
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.hover-text-secondary:hover {
+  color: var(--color-secondary);
+  transition: color 0.2s ease;
+}
+
+.hover-bg-primary:hover {
+  background-color: var(--color-primary);
+  transition: background-color 0.2s ease;
+}
+
+.hover-bg-secondary:hover {
+  background-color: var(--color-secondary);
+  transition: background-color 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Sombras de Texto Inteligentes */
 .text-shadow {
-  text-shadow: 2px 2px 0 var(--color-secondary);
+  /* Ahora la sombra cambia de color sola según el tema */
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .text-shadow-cyan {
   text-shadow: 2px 2px 0 var(--color-primary);
 }
 
-/* estilos del home */
+.text-shadow-strong {
+  text-shadow: 0 0 20px var(--color-primary),
+               0 0 40px var(--color-primary);
+}
 
+/* Sombras de caja */
+.shadow-custom {
+  box-shadow: 0 4px 6px -1px var(--shadow-color),
+              0 2px 4px -2px var(--shadow-color);
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 10px 15px -3px var(--shadow-color),
+              0 4px 6px -4px var(--shadow-color);
+}
+
+/* 5. ANIMACIONES (Conservamos las tuyas originales) */
 @keyframes gradientMove {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-  50% {
-    transform: translateX(-250px) translateY(120px);
-  }
-  100% {
-    transform: translateX(0) translateY(0);
-  }
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-250px) translateY(120px); }
+  100% { transform: translateX(0) translateY(0); }
 }
 
 @keyframes gradientMove2 {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-  50% {
-    transform: translateX(250px) translateY(-120px);
-  }
-  100% {
-    transform: translateX(0) translateY(0);
-  }
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(250px) translateY(-120px); }
+  100% { transform: translateX(0) translateY(0); }
 }
 
 .animate-gradientMove {
@@ -86,4 +179,145 @@ body {
 
 .animate-gradientMove2 {
   animation: gradientMove2 8s ease-in-out infinite alternate;
+}
+
+/* 6. COMPONENTES ESPECÍFICOS */
+
+/* Navbar / Header */
+header,
+nav {
+  background-color: var(--color-bg);
+  border-color: var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav a {
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px var(--shadow-color),
+              0 8px 10px -6px var(--shadow-color);
+}
+
+/* Botón de tema */
+.theme-toggle {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* 7. FONDOS CON GRADIENTE ANIMADO - ARREGLADO */
+.gradient-bg {
+  position: relative;
+  overflow: hidden;
+  /* En modo claro: fondo blanco base */
+  background-color: var(--color-bg);
+}
+
+.gradient-bg::before,
+.gradient-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gradient-bg::before {
+  width: 600px;
+  height: 600px;
+  background: var(--hero-gradient-from);
+  top: -150px;
+  left: -150px;
+  animation: gradientMove 8s ease-in-out infinite alternate;
+}
+
+.gradient-bg::after {
+  width: 500px;
+  height: 500px;
+  background: var(--hero-gradient-to);
+  bottom: -150px;
+  right: -150px;
+  animation: gradientMove2 8s ease-in-out infinite alternate;
+}
+
+/* El contenido dentro del gradient-bg debe estar encima */
+.gradient-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 8. UTILITIES PARA SECCIONES */
+.section-light {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.section-card {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+/* 9. MEJORAS PARA ICONOS SOCIALES */
+.social-icon {
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* 10. BOTONES */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+/* 11. RESPONSIVE */
+@media (max-width: 768px) {
+  .gradient-bg::before,
+  .gradient-bg::after {
+    filter: blur(80px);
+  }
+}
+
+/* 12. ASEGURAR CONTRASTE EN TEXTOS SOBRE GRADIENTES */
+.hero-title {
+  color: var(--color-text);
+  /* En modo claro necesita más peso para destacar sobre el gradiente suave */
+}
+
+.hero-subtitle {
+  color: var(--color-text-muted);
 }

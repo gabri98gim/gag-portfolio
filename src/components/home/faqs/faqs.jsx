@@ -61,21 +61,21 @@ const skills = {
   return (
     <div className="flex flex-col items-center px-4 text-left">
       <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-white text-center text-4xl font-bold drop-shadow-[2px_2px_0_#7836cf]">
+        <h2 className="text-gray-900 dark:text-white text-center text-4xl font-bold drop-shadow-[2px_2px_0_#2c77f2]">
           Sobre mí y mi trabajo
         </h2>
-        <ul className="mt-8 space-y-4 text-lg drop-shadow-[2px_2px_0_#7836cf]">
+        <ul className="mt-8 space-y-4 text-lg drop-shadow-[2px_2px_0_#2c77f2]">
           {Object.entries(skills).map(([category, items]) => (
             <li key={category} className="w-full">
               <div
                 onClick={() => toggleItem(category)}
-                className="bg-gray-900 hover:bg-opacity-80 w-full cursor-pointer overflow-hidden rounded-2xl text-left transition-all"
+                className="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-opacity-80 border border-gray-200 dark:border-transparent w-full cursor-pointer overflow-hidden rounded-2xl text-left transition-all"
               >
                 <div className="flex items-center gap-3 p-4">
                   {CategoryIcons[category]}
                   <div className="flex grow items-center justify-between gap-2">
                     <div className="max-w-[200px] min-w-0 overflow-hidden md:max-w-none">
-                      <span className="block truncate text-lg text-white drop-shadow-[1px_1px_0_#7836cf] font-bold">
+                      <span className="block truncate text-lg text-gray-900 dark:text-white drop-shadow-[1px_1px_0_#2c77f2] font-bold">
                         {category}
                       </span>
                     </div>
@@ -99,7 +99,7 @@ const skills = {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-[0.8em] text-white text-semibold ">
+                  <p className="text-[0.8em] text-gray-700 dark:text-white text-semibold ">
                     {skills[category]}
                   </p>
                 </div>

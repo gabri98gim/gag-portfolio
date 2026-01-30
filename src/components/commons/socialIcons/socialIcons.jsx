@@ -13,7 +13,7 @@ const SocialIcons = () => {
         href="https://www.linkedin.com/in/gabriel-andreu-gimeno-ba674824a/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mr-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
+        className="mr-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#2c77f2]"
         aria-label="Linkedin"
       >
         <FaLinkedinIn className="h-7 w-7" />
@@ -24,7 +24,7 @@ const SocialIcons = () => {
         href="https://github.com/gabri98gim"
         target="_blank"
         rel="noopener noreferrer"
-        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
+        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#2c77f2]"
         aria-label="Github"
       >
         <FaGithub className="h-7 w-7" />
@@ -35,7 +35,7 @@ const SocialIcons = () => {
         href="https://x.com/gandreu8"
         target="_blank"
         rel="noopener noreferrer"
-        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
+        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#2c77f2]"
         aria-label="Twitter"
       >
         <FaXTwitter className="h-7 w-7" />
@@ -46,7 +46,7 @@ const SocialIcons = () => {
         href="https://www.instagram.com/gabri98gim/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#7836cf]"
+        className="mx-3 text-zinc-400 hover:text-[#69c7c7] drop-shadow-[1px_1px_0_#2c77f2]"
         aria-label="Instagram"
       >
         <FaInstagram className="h-7 w-7" />
