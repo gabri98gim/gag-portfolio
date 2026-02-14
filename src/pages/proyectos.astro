@@ -1,72 +1,128 @@
 ---
 import "../styles/projects.css";
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/commons/hero/hero.astro";
 import ProjectCard from "../components/project/proyectCard.astro";
 
 import { proyectos } from "../data/projectData.js";
 ---
 
 <Layout title="Proyectos" description="Proyectos">
-  <Hero titulo="Proyectos" />
+  <main class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="text-center mb-16 project-fade-in">
+      <h2
+        class="text-sm font-bold tracking-[0.2em] text-(--color-primary) uppercase mb-3"
+      >
+        Portfolio
+      </h2>
+      <div class="relative inline-block">
+        <h1
+          class="text-4xl md:text-5xl font-extrabold tracking-tight text-(--color-text) mb-2 relative z-10"
+        >
+          SELECTED WORKS
+        </h1>
+        <div
+          class="absolute -bottom-2 left-0 right-0 h-1.5 bg-(--color-primary) rounded-full transform scale-x-50 origin-center opacity-80"
+        >
+        </div>
+      </div>
+      <p class="mt-6 text-(--color-text-muted) max-w-2xl mx-auto">
+        Explorando la intersección entre código y storytelling visual.
+      </p>
+    </header>
 
-  <!-- Botones -->
-  <div class="mt-6 mb-6 flex flex-wrap justify-center gap-3 px-2">
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#2c77f2] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="all"
+    <!-- ═══════════ FILTER TABS ═══════════ -->
+    <nav
+      class="flex flex-wrap justify-center gap-3 mb-16 project-fade-in"
+      style="animation-delay: 0.1s;"
     >
-      Todos
-    </button>
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#2c77f2] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="fullstack"
-    >
-      Full Stack
-    </button>
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#2c77f2] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="frontend"
-    >
-      Frontend
-    </button>
-    <button
-      class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#2c77f2] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none"
-      data-filter="backend"
-    >
-      Backend
-    </button>
-  </div>
+      <button
+        class="filter-btn active px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="all"
+      >
+        Todos
+      </button>
+      <button
+        class="filter-btn px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="fullstack"
+      >
+        Full Stack
+      </button>
+      <button
+        class="filter-btn px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="frontend"
+      >
+        Frontend
+      </button>
+      <button
+        class="filter-btn px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="backend"
+      >
+        Backend
+      </button>
+    </nav>
 
-  <!-- Cards -->
+    <!-- ═══════════ PROJECTS GRID ═══════════ -->
+    <div
+      id="projects-container"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[400px]"
+    >
+      {
+        proyectos.map((proyecto, index) => (
+          <ProjectCard
+            index={index}
+            titulo={proyecto.titulo}
+            descripcion={proyecto.descripcion}
+            imagen={proyecto.imagen}
+            tecnologias={proyecto.tecnologias}
+            demo={proyecto.demo}
+            codigo={proyecto.codigo}
+            categoria={proyecto.categoria}
+            size={proyecto.size as "large" | "standard"}
+          />
+        ))
+      }
+    </div>
+
+    <!-- ═══════════ LOAD MORE + CTA ═══════════ -->
+    <div
+      class="mt-16 text-center project-fade-in"
+      style="animation-delay: 0.8s;"
+    >
+      <button
+        id="load-more"
+        class="group items-center gap-2 px-8 py-3 rounded-full border-2 border-(--color-primary) text-(--color-primary) hover:bg-(--color-primary) hover:text-white transition-all font-bold cursor-pointer"
+        style="display: none;"
+      >
+        Ver más
+        <svg
+          class="w-4 h-4 transition-transform group-hover:translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- ═══════════ DECORATIVE BACKGROUND ═══════════ -->
   <div
-    id="projects-container"
-    class="4xl:px-96 flex flex-wrap justify-center gap-5 px-3 pt-5 xl:px-32 2xl:px-60"
+    class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none"
   >
-    {
-      proyectos.map((proyecto, index) => (
-        <ProjectCard
-          index={index}
-          titulo={proyecto.titulo}
-          descripcion={proyecto.descripcion}
-          imagen={proyecto.imagen}
-          tecnologias={proyecto.tecnologias}
-          demo={proyecto.demo}
-          codigo={proyecto.codigo}
-          categoria={proyecto.categoria}
-        />
-      ))
-    }
-  </div>
-
-  <!-- Ver el resto de los proyectos -->
-  <div class="flex justify-center mt-8">
-    <button
-      id="load-more"
-      class="px-6 py-2 cursor-pointer bg-[#69c7c7] text-[#1d1250] font-bold rounded-full hover:bg-[#46caca] drop-shadow-[2px_2px_0_#2c77f2] active:translate-y-0.5 active:drop-shadow-none transition-all"
+    <div
+      class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--color-primary) opacity-[0.04] rounded-full blur-[100px]"
     >
-      Ver más
-    </button>
+    </div>
+    <div
+      class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-(--color-secondary) opacity-[0.04] rounded-full blur-[100px]"
+    >
+    </div>
   </div>
 </Layout>
 
@@ -92,7 +148,7 @@ import { proyectos } from "../data/projectData.js";
     }
 
     function showCard(card) {
-      card.style.display = "flex";
+      card.style.display = "";
       requestAnimationFrame(() => {
         card.classList.remove(HIDDEN_CLASS);
         card.classList.add(VISIBLE_CLASS);
@@ -135,7 +191,7 @@ import { proyectos } from "../data/projectData.js";
       // botón ver más visible solo si hay más para ver
       if (!loadMoreBtn) return;
       loadMoreBtn.style.display =
-        filteredCards.length > itemsToShow ? "block" : "none";
+        filteredCards.length > itemsToShow ? "inline-flex" : "none";
     }
 
     /* ---------------- Filtros eventos ---------------- */

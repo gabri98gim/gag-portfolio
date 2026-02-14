@@ -1,22 +1,20 @@
-@keyframes gradientLava {
+/* ═══════════ FADE-IN ANIMATION ═══════════ */
+@keyframes projectFadeIn {
   0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
+    opacity: 0;
+    transform: translateY(16px);
   }
   100% {
-    background-position: 0% 50%;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Animación para las cards */
+.project-fade-in {
+  animation: projectFadeIn 0.55s ease-out both;
+}
+
+/* ═══════════ FILTER / SHOW-HIDE ═══════════ */
 .project-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -31,15 +29,37 @@
   pointer-events: none;
 }
 
-/* Botones de filtrado no activos */
+/* ═══════════ FILTER BUTTONS — Pill Style ═══════════ */
 .filter-btn {
-  opacity: 0.4;
-  transition: 0.18s ease;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: all 0.25s ease;
 }
 
-/* Botón activo */
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 .filter-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(44, 120, 242, 0.25);
   transform: scale(1.05);
-  opacity: 1;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ═══════════ GLASS CARD (Standard cards) ═══════════ */
+.glass-card {
+  background-color: var(--color-card);
+  opacity: 0.95;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+}
+
+.dark .glass-card {
+  background-color: rgba(18, 20, 30, 0.75);
+  border-color: rgba(255, 255, 255, 0.08);
 }

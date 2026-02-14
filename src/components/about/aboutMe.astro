@@ -6,89 +6,61 @@ import { HiDownload } from "react-icons/hi";
 const cvPath = "/CV Sector TIC Gabriel Andreu Gimeno 2026.pdf";
 ---
 
-<section class="mx-auto mt-28 max-w-6xl px-6">
-  <div
-    class="relative overflow-hidden rounded-3xl bg-(--color-card) backdrop-blur-xl border border-(--color-border) p-8 md:p-14 transition-all duration-500 hover:border-(--color-border-hover) hover:shadow-(--shadow-glow)"
-  >
-    <!-- Decorative gradient -->
-    <div
-      class="absolute -top-32 -right-32 h-72 w-72 rounded-full bg-(--color-primary) opacity-[0.06] blur-[100px] pointer-events-none"
-    >
-    </div>
-    <div
-      class="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-(--color-secondary) opacity-[0.04] blur-[100px] pointer-events-none"
-    >
-    </div>
-
-    <div class="relative z-10 flex flex-col items-center gap-12 lg:flex-row">
-      <!-- Photo -->
-      <div class="relative group shrink-0">
-        <div
-          class="absolute -inset-1.5 rounded-2xl bg-linear-to-tr from-(--color-primary) to-(--color-secondary) opacity-20 blur-sm transition duration-500 group-hover:opacity-40"
-        >
-        </div>
-        <div
-          class="relative h-64 w-64 overflow-hidden rounded-2xl md:h-80 md:w-80 border border-(--color-border) shadow-lg"
-        >
-          <img
-            src={MiFoto.src}
-            alt="Foto de Gabri"
-            class="h-full w-full object-cover object-[center_15%] transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      </div>
-
+<section class="pt-28 pb-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
       <!-- Text Content -->
-      <div class="flex-1 text-center lg:text-left">
-        <div class="mb-4">
-          <span class="accent-line"></span>
-        </div>
-        <h2 class="section-title mb-6">
-          Sobre <span class="accent">Mí</span>
-        </h2>
+      <div class="flex-1 text-center lg:text-left animate-fade-in-up">
+        <span
+          class="text-xs font-bold tracking-[0.25em] text-(--color-primary) uppercase mb-4 block"
+        >
+        </span>
+
+        <h1 class="section-title mb-6">
+          Gabriel<br />
+          <span class="accent">Andreu</span>
+          <br />Gimeno
+        </h1>
 
         <div
-          class="space-y-4 text-(--color-text-muted) leading-relaxed text-lg"
+          class="space-y-4 text-(--color-text-muted) leading-relaxed text-lg max-w-xl"
         >
           <p>
-            Soy <span class="text-(--color-text) font-semibold">Gabriel</span>,
-            un perfil híbrido entre el
-            <span class="text-(--color-text) font-semibold"
-              >Desarrollo Front End</span
-            > y la
-            <span class="text-(--color-text) font-semibold"
-              >Producción Audiovisual</span
-            >.
-          </p>
-          <p>
-            Mi enfoque une la lógica de la programación con mi ojo de
-            <span class="text-(--color-secondary) font-semibold">Filmmaker</span
-            > para crear experiencias digitales que narren una historia.
-          </p>
-          <p>
-            Trabajo con tecnologías como <span
-              class="text-(--color-text) font-medium"
-              >Astro, React y Tailwind CSS</span
-            >, priorizando siempre el detalle y la experiencia de usuario.
+            Un perfil multidisciplinar basado en Zaragoza. Combino precisión
+            técnica con visión artística para crear experiencias digitales
+            inmersivas. Desde arquitectura web pixel-perfect hasta narrativa
+            audiovisual.
           </p>
         </div>
 
         <div
           class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
         >
-          <a
-            href={cvPath}
-            download="CV_Gabriel_Andreu_2026.pdf"
-            class="btn-primary px-8 py-4 text-sm"
-          >
-            <HiDownload className="h-5 w-5" />
-            Descargar CV
+          <a href="#services" class="btn-primary px-8 py-4 text-sm">
+            Explorar Servicios
           </a>
 
-          <a href="/contact" class="btn-outline px-8 py-4 text-sm">
-            Hablemos
+          <a href="#experience" class="btn-outline px-8 py-4 text-sm">
+            Ver Trayectoria
           </a>
         </div>
+      </div>
+
+      <!-- Photo — Full width, no frame -->
+      <div
+        class="relative shrink-0 w-full max-w-xs lg:max-w-sm animate-fade-in"
+        style="animation-delay: 0.2s;"
+      >
+        <!-- Glow behind photo -->
+        <div
+          class="absolute -inset-4 bg-linear-to-br from-(--color-primary)/10 to-(--color-secondary)/10 rounded-3xl blur-2xl pointer-events-none"
+        >
+        </div>
+        <img
+          src={MiFoto.src}
+          alt="Gabriel Andreu"
+          class="relative w-full aspect-3/4 object-cover object-[center_15%] rounded-2xl"
+        />
       </div>
     </div>
   </div>

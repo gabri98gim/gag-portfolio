@@ -14,6 +14,7 @@ export const proyectos = [
     demo: "https://factos-three.vercel.app/",
     codigo: "https://github.com/gabri98gim/factos",
     categoria: "frontend",
+    size: "large",
   },
   {
     titulo: "Your Directory",
@@ -24,6 +25,7 @@ export const proyectos = [
     demo: "https://proyecto-cine-your-directory.vercel.app/",
     codigo: "https://github.com/gabri98gim/proyecto-cine-your-directory",
     categoria: "frontend",
+    size: "standard",
   },
   {
     titulo: "Ristorante Italiano",
@@ -34,6 +36,7 @@ export const proyectos = [
     demo: "https://ecommerce-ristorante-italiano.vercel.app/",
     codigo: "https://github.com/gabri98gim/ecommerce-ristorante-italiano",
     categoria: "frontend",
+    size: "standard",
   },
   {
     titulo: "Lo Veo y Te Digo",
@@ -44,5 +47,6 @@ export const proyectos = [
     demo: "https://lo-veo-y-te-digo.vercel.app/",
     codigo: "https://github.com/gabri98gim/lo-veo-y-te-digo",
     categoria: "frontend",
+    size: "standard",
   },
 ];
