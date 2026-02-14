@@ -1,42 +1,9 @@
 import React, { useState } from "react";
 
-const CategoryIcons = {
-  "Web Development": (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="text-primary h-6 w-6 opacity-70"
-    >
-      <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
-    </svg>
-  ),
-  "Mobile Development": (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="text-primary h-6 w-6 opacity-70"
-    >
-      <path d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z"></path>
-    </svg>
-  ),
-  "UI/UX Design & Prototyping": (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="text-primary h-6 w-6 opacity-70"
-    >
-      <path d="M5.7646 7.99998L5.46944 7.26944C5.26255 6.75737 5.50995 6.17454 6.02202 5.96765L15.2939 2.22158C15.8059 2.01469 16.3888 2.26209 16.5956 2.77416L22.2147 16.6819C22.4216 17.194 22.1742 17.7768 21.6622 17.9837L12.3903 21.7298C11.8783 21.9367 11.2954 21.6893 11.0885 21.1772L11.0002 20.9586V21H7.00021C6.44792 21 6.00021 20.5523 6.00021 20V19.7303L2.65056 18.377C2.13849 18.1701 1.89109 17.5873 2.09798 17.0752L5.7646 7.99998ZM8.00021 19H10.2089L8.00021 13.5333V19ZM6.00021 12.7558L4.32696 16.8972L6.00021 17.6084V12.7558ZM7.69842 7.44741L12.5683 19.5008L19.9858 16.5039L15.1159 4.45055L7.69842 7.44741ZM10.6766 9.47974C10.1645 9.68663 9.5817 9.43924 9.37481 8.92717C9.16792 8.4151 9.41532 7.83227 9.92739 7.62538C10.4395 7.41849 11.0223 7.66588 11.2292 8.17795C11.4361 8.69002 11.1887 9.27286 10.6766 9.47974Z"></path>
-    </svg>
-  ),
-};
-
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState(null);
 
-const skills = {
+  const skills = {
     "¿Qué tecnologías uso?": [
       "Domino el desarrollo frontend con HTML, CSS, JavaScript y TypeScript. Utilizo frameworks y librerías modernas como React, Next.js y Astro para crear interfaces rápidas. También manejo el diseño con Tailwind CSS y la gestión de proyectos con Git y WordPress.",
     ],
@@ -58,34 +25,107 @@ const skills = {
     setOpenItem(openItem === item ? null : item);
   };
 
+  const icons = {
+    "¿Qué tecnologías uso?": (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+        <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z"></path>
+      </svg>
+    ),
+    "Mi Experiencia": (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+        <path d="M7 5V2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2V5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V6C2 5.44772 2.44772 5 3 5H7ZM4 15V19H20V15H4ZM4 13H20V7H4V13ZM9 3V5H15V3H9ZM11 11H13V13H11V11Z"></path>
+      </svg>
+    ),
+    "Mi formación": (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+        <path d="M12 2L0 9L12 16L22 10.1667V17.5H24V9L12 2ZM3.99902 13.4905V18.0001C3.99902 20.667 7.99902 22.0001 11.999 22.0001C15.999 22.0001 19.999 20.667 19.999 18.0001V13.4905L11.999 17.6501L3.99902 13.4905Z"></path>
+      </svg>
+    ),
+    "¿Cómo trabajo en equipo?": (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+        <path d="M2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22H16C16 18.6863 13.3137 16 10 16C6.68629 16 4 18.6863 4 22H2ZM10 13C6.685 13 4 10.315 4 7C4 3.685 6.685 1 10 1C13.315 1 16 3.685 16 7C16 10.315 13.315 13 10 13ZM10 11C12.21 11 14 9.21 14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11ZM18.2837 14.7028C21.0644 15.9561 23 18.752 23 22H21C21 19.564 19.5483 17.4671 17.4628 16.5271L18.2837 14.7028ZM17.5962 3.41321C19.5944 4.23703 21 6.20361 21 8.5C21 10.7964 19.5944 12.763 17.5962 13.5868L16.8197 11.7639C18.1236 11.1847 19 9.9395 19 8.5C19 7.0605 18.1236 5.81533 16.8197 5.23606L17.5962 3.41321Z"></path>
+      </svg>
+    ),
+    "Metodologías Ágiles": (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+        <path d="M12 1L21.5 6.5V17.5L12 23L2.5 17.5V6.5L12 1ZM12 3.311L4.5 7.65311V16.3469L12 20.689L19.5 16.3469V7.65311L12 3.311ZM12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"></path>
+      </svg>
+    ),
+  };
+
   return (
-    <div className="flex flex-col items-center px-4 text-left">
-      <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-gray-900 dark:text-white text-center text-4xl font-bold drop-shadow-[2px_2px_0_#2c77f2]">
-          Sobre mí y mi trabajo
-        </h2>
-        <ul className="mt-8 space-y-4 text-lg drop-shadow-[2px_2px_0_#2c77f2]">
+    <div className="flex flex-col items-center px-6 text-left py-28">
+      <div className="mx-auto w-full max-w-3xl">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <span
+              className="inline-block w-12 h-[3px] rounded-full"
+              style={{
+                background: "linear-gradient(90deg, var(--color-primary), var(--color-secondary))",
+              }}
+            ></span>
+          </div>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold tracking-tight"
+            style={{ color: "var(--color-text)", letterSpacing: "-0.03em" }}
+          >
+            Sobre mí y mi{" "}
+            <span style={{ color: "var(--color-primary)" }}>trabajo</span>
+          </h2>
+        </div>
+        <ul className="space-y-3">
           {Object.entries(skills).map(([category, items]) => (
             <li key={category} className="w-full">
               <div
                 onClick={() => toggleItem(category)}
-                className="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-opacity-80 border border-gray-200 dark:border-transparent w-full cursor-pointer overflow-hidden rounded-2xl text-left transition-all"
+                className="w-full cursor-pointer overflow-hidden rounded-2xl text-left transition-all duration-300"
+                style={{
+                  backgroundColor: "var(--color-card)",
+                  border: "1px solid var(--color-border)",
+                  ...(openItem === category
+                    ? { borderColor: "var(--color-border-hover)" }
+                    : {}),
+                }}
+                onMouseEnter={(e) => {
+                  if (openItem !== category) {
+                    e.currentTarget.style.borderColor = "var(--color-border-hover)";
+                    e.currentTarget.style.backgroundColor = "var(--color-card-hover)";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (openItem !== category) {
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                    e.currentTarget.style.backgroundColor = "var(--color-card)";
+                  }
+                }}
               >
-                <div className="flex items-center gap-3 p-4">
-                  {CategoryIcons[category]}
+                <div className="flex items-center gap-4 p-5">
+                  <div
+                    className="shrink-0 rounded-xl p-2.5 transition-colors"
+                    style={{
+                      backgroundColor: openItem === category
+                        ? "var(--color-primary)"
+                        : "color-mix(in srgb, var(--color-primary) 10%, transparent)",
+                      color: openItem === category ? "white" : "var(--color-primary)",
+                    }}
+                  >
+                    {icons[category]}
+                  </div>
                   <div className="flex grow items-center justify-between gap-2">
-                    <div className="max-w-[200px] min-w-0 overflow-hidden md:max-w-none">
-                      <span className="block truncate text-lg text-gray-900 dark:text-white drop-shadow-[1px_1px_0_#2c77f2] font-bold">
-                        {category}
-                      </span>
-                    </div>
+                    <span
+                      className="text-base font-bold"
+                      style={{ color: "var(--color-text)" }}
+                    >
+                      {category}
+                    </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className={`h-6 w-6 shrink-0 transform text-[#6a2cbb] transition-transform ${
+                      className={`h-5 w-5 shrink-0 transform transition-transform duration-300 ${
                         openItem === category ? "rotate-180" : ""
                       }`}
+                      style={{ color: "var(--color-text-muted)" }}
                     >
                       <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
                     </svg>
@@ -93,13 +133,16 @@ const skills = {
                 </div>
 
                 <div
-                  className={`px-4 transition-all duration-300 ${
+                  className={`px-5 transition-all duration-300 ${
                     openItem === category
-                      ? "max-h-[500px] pb-4 opacity-100"
+                      ? "max-h-[500px] pb-5 opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-[0.8em] text-gray-700 dark:text-white text-semibold ">
+                  <p
+                    className="text-sm leading-relaxed pl-12"
+                    style={{ color: "var(--color-text-muted)" }}
+                  >
                     {skills[category]}
                   </p>
                 </div>

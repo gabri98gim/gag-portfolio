@@ -3,18 +3,19 @@ import { proyectos } from "../../../data/projectData.js";
 import ProyectCard from "./homeProyectCard.astro";
 ---
 
-<section class="py-24">
+<section class="py-28">
   <div class="max-w-6xl mx-auto px-6">
-    <h2
-      class="text-center text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-16"
-    >
-      Proyectos <span
-        class="text-[#2c77f2] drop-shadow-[0_0_15px_rgba(120,54,207,0.3)]"
-        >Destacados</span
-      >
-    </h2>
+    <div class="text-center mb-16">
+      <span class="accent-line mx-auto mb-6 block"></span>
+      <h2 class="section-title">
+        Proyectos <span class="accent">Destacados</span>
+      </h2>
+      <p class="text-(--color-text-muted) mt-4 max-w-xl mx-auto text-lg">
+        Una selección de mis trabajos más recientes
+      </p>
+    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
       {
         proyectos
           .slice(0, 2)
