@@ -60,12 +60,24 @@ import { proyectos } from "../data/projectData.js";
       >
         Backend
       </button>
+      <button
+        class="filter-btn px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="diseno"
+      >
+        Diseño Gráfico
+      </button>
+      <button
+        class="filter-btn px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer"
+        data-filter="realizacion"
+      >
+        Realización
+      </button>
     </nav>
 
     <!-- ═══════════ PROJECTS GRID ═══════════ -->
     <div
       id="projects-container"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[400px]"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
       {
         proyectos.map((proyecto, index) => (
@@ -79,6 +91,7 @@ import { proyectos } from "../data/projectData.js";
             codigo={proyecto.codigo}
             categoria={proyecto.categoria}
             size={proyecto.size as "large" | "standard"}
+            imagePosition={proyecto.imagePosition}
           />
         ))
       }
@@ -225,6 +238,20 @@ import { proyectos } from "../data/projectData.js";
       queryElements();
       attachFilterEvents();
       attachLoadMore();
+
+      // Check for ?cat= query param (from service card links)
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get("cat");
+      if (catParam) {
+        const matchBtn = document.querySelector(
+          `.filter-btn[data-filter="${catParam}"]`,
+        );
+        if (matchBtn) {
+          setActiveButton(matchBtn);
+          applyFilter(catParam);
+          return;
+        }
+      }
       applyFilter("all");
     }
 

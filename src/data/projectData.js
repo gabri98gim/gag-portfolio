@@ -9,7 +9,7 @@ export const proyectos = [
     titulo: "Factos",
     descripcion:
       "🏆 GANADOR CodeJam: Premio a Mejor Diseño y Usabilidad. Trivia interactiva desarrollada bajo presión en hackathon, destacando por su interfaz intuitiva y pulida.",
-    imagen: factosImg.src, 
+    imagen: factosImg.src,
     tecnologias: ["React", "Tailwind", "Vite"],
     demo: "https://factos-three.vercel.app/",
     codigo: "https://github.com/gabri98gim/factos",
@@ -20,18 +20,19 @@ export const proyectos = [
     titulo: "Your Directory",
     descripcion:
       "Plataforma de cine con consumo de API en tiempo real. Permite explorar tendencias, buscar películas y ver detalles detallados.",
-    imagen: cineImg.src, 
+    imagen: cineImg.src,
     tecnologias: ["HTML", "CSS", "JavaScript", "API REST"],
     demo: "https://proyecto-cine-your-directory.vercel.app/",
     codigo: "https://github.com/gabri98gim/proyecto-cine-your-directory",
     categoria: "frontend",
     size: "standard",
+    imagePosition: "left top",
   },
   {
     titulo: "Ristorante Italiano",
     descripcion:
       "E-commerce gastronómico con diseño 'Pixel Perfect'. Gestión de carta digital y carrito de compras con una estética cuidada y apetecible.",
-    imagen: italianoImg.src, 
+    imagen: italianoImg.src,
     tecnologias: ["React", "Tailwind", "Responsive"],
     demo: "https://ecommerce-ristorante-italiano.vercel.app/",
     codigo: "https://github.com/gabri98gim/ecommerce-ristorante-italiano",
@@ -48,5 +49,6 @@ export const proyectos = [
     codigo: "https://github.com/gabri98gim/lo-veo-y-te-digo",
     categoria: "frontend",
     size: "standard",
+    imagePosition: "right top",
   },
 ];

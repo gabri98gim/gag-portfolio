@@ -9,6 +9,7 @@ export interface Props {
   categoria?: string;
   index: number;
   size?: "large" | "standard";
+  imagePosition?: string;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   categoria,
   index,
   size = "standard",
+  imagePosition,
 } = Astro.props;
 
 const isLarge = size === "large";
@@ -98,15 +100,16 @@ const isLarge = size === "large";
   <div
     data-index={index}
     data-categoria={categoria ?? ""}
-    class="project-card group relative rounded-2xl overflow-hidden border border-(--color-border) shadow-xl transition-all duration-300 hover:border-(--color-primary)/50 project-fade-in"
-    style={`animation-delay: ${0.15 + index * 0.1}s; min-height: 400px;`}
+    class="project-card group relative rounded-2xl overflow-hidden border border-(--color-border) shadow-xl transition-all duration-300 hover:border-(--color-primary)/50 project-fade-in flex flex-col"
+    style={`animation-delay: ${0.15 + index * 0.1}s;`}
   >
-    <!-- Image -->
-    <div class="absolute inset-0">
+    <!-- Image — grows to fill available space -->
+    <div class="flex-1 min-h-[200px] overflow-hidden">
       <img
         src={imagen}
         alt={`Imagen del proyecto ${titulo}`}
-        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        style={`object-position: ${imagePosition || "top"};`}
         loading="lazy"
       />
     </div>
@@ -118,9 +121,13 @@ const isLarge = size === "large";
         <div class="flex justify-between items-start mb-1">
           <div>
             <h3 class="text-lg font-bold text-(--color-text)">{titulo}</h3>
-            <p class="text-xs text-(--color-text-muted) mt-1">
-              {tecnologias.join(" • ")}
-            </p>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              {tecnologias.map((tech) => (
+                <span class="px-2.5 py-0.5 text-[10px] font-semibold bg-(--color-primary)/15 text-(--color-primary) border border-(--color-primary)/25 rounded-full">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
           <a
             href={demo}
