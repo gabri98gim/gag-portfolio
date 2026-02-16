@@ -5,27 +5,27 @@
 
 /* 2. DESIGN TOKENS — Inspired by Stitch (Manrope, #2c78f2, Dark Premium) */
 :root {
-  /* --- LIGHT MODE --- */
-  --color-bg: #fafbff;
-  --color-bg-elevated: #ffffff;
-  --color-text: #0c0e16;
-  --color-text-muted: #5a6178;
+  /* --- LIGHT MODE (soft cream — easy on the eyes) --- */
+  --color-bg: #f0f0ec;
+  --color-bg-elevated: #e8e8e4;
+  --color-text: #1a1c24;
+  --color-text-muted: #555a6e;
   --color-primary: #2c78f2;
   --color-primary-hover: #1a5fd4;
-  --color-secondary: #a27ed1;
-  --color-card: #ffffff;
-  --color-card-hover: #f0f4ff;
-  --color-border: #e0e4ef;
+  --color-secondary: #9065c0;
+  --color-card: #f7f7f4;
+  --color-card-hover: #eeeee9;
+  --color-border: #d5d5ce;
   --color-border-hover: #2c78f2;
 
-  --shadow-sm: 0 1px 3px rgba(12, 14, 22, 0.06);
-  --shadow-md: 0 4px 16px rgba(12, 14, 22, 0.08);
-  --shadow-lg: 0 12px 40px rgba(12, 14, 22, 0.1);
-  --shadow-glow: 0 0 30px rgba(44, 120, 242, 0.15);
+  --shadow-sm: 0 1px 3px rgba(12, 14, 22, 0.07);
+  --shadow-md: 0 4px 16px rgba(12, 14, 22, 0.09);
+  --shadow-lg: 0 12px 40px rgba(12, 14, 22, 0.12);
+  --shadow-glow: 0 0 30px rgba(44, 120, 242, 0.12);
 
-  --hero-gradient-from: rgba(44, 120, 242, 0.08);
-  --hero-gradient-mid: rgba(162, 126, 209, 0.06);
-  --hero-gradient-to: rgba(44, 120, 242, 0.04);
+  --hero-gradient-from: rgba(44, 120, 242, 0.06);
+  --hero-gradient-mid: rgba(144, 101, 192, 0.05);
+  --hero-gradient-to: rgba(44, 120, 242, 0.03);
 }
 
 /* --- DARK MODE --- */
@@ -61,40 +61,89 @@ body {
   scroll-behavior: smooth;
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* 4. TEXT UTILITIES */
-.text-custom { color: var(--color-text); }
-.text-muted { color: var(--color-text-muted); }
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.primary { color: var(--color-primary); }
-.secondary { color: var(--color-secondary); }
+.text-custom {
+  color: var(--color-text);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.primary {
+  color: var(--color-primary);
+}
+.secondary {
+  color: var(--color-secondary);
+}
 
 /* 5. BACKGROUND UTILITIES */
-.bg-custom { background-color: var(--color-bg); }
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-card { background-color: var(--color-card); }
+.bg-custom {
+  background-color: var(--color-bg);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-card {
+  background-color: var(--color-card);
+}
 
 /* 6. BORDER UTILITIES */
-.border-custom { border-color: var(--color-border); }
+.border-custom {
+  border-color: var(--color-border);
+}
 
 /* 7. HOVER UTILITIES */
-.hover-text-primary:hover { color: var(--color-primary); transition: color 0.2s ease; }
-.hover-text-secondary:hover { color: var(--color-secondary); transition: color 0.2s ease; }
-.hover-bg-primary:hover { background-color: var(--color-primary); transition: background-color 0.2s ease; }
-.hover-bg-secondary:hover { background-color: var(--color-secondary); transition: background-color 0.2s ease; }
-.hover-scale:hover { transform: scale(1.03); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.hover-text-primary:hover {
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+.hover-text-secondary:hover {
+  color: var(--color-secondary);
+  transition: color 0.2s ease;
+}
+.hover-bg-primary:hover {
+  background-color: var(--color-primary);
+  transition: background-color 0.2s ease;
+}
+.hover-bg-secondary:hover {
+  background-color: var(--color-secondary);
+  transition: background-color 0.2s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* 8. SHADOWS */
-.shadow-custom { box-shadow: var(--shadow-md); }
-.shadow-custom-lg { box-shadow: var(--shadow-lg); }
-.shadow-glow { box-shadow: var(--shadow-glow); }
+.shadow-custom {
+  box-shadow: var(--shadow-md);
+}
+.shadow-custom-lg {
+  box-shadow: var(--shadow-lg);
+}
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
 
 .text-shadow {
   text-shadow: 0 2px 20px rgba(44, 120, 242, 0.3);
@@ -103,60 +152,118 @@ body {
   text-shadow: 0 0 20px var(--color-primary);
 }
 .text-shadow-strong {
-  text-shadow: 0 0 30px var(--color-primary), 0 0 60px var(--color-primary);
+  text-shadow:
+    0 0 30px var(--color-primary),
+    0 0 60px var(--color-primary);
 }
 
 /* 9. ANIMATIONS */
 @keyframes gradientMove {
-  0% { transform: translateX(0) translateY(0) scale(1); }
-  50% { transform: translateX(-200px) translateY(100px) scale(1.1); }
-  100% { transform: translateX(0) translateY(0) scale(1); }
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(-200px) translateY(100px) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
 }
 
 @keyframes gradientMove2 {
-  0% { transform: translateX(0) translateY(0) scale(1); }
-  50% { transform: translateX(200px) translateY(-100px) scale(1.1); }
-  100% { transform: translateX(0) translateY(0) scale(1); }
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(200px) translateY(-100px) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(44, 120, 242, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(44, 120, 242, 0.4); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(44, 120, 242, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(44, 120, 242, 0.4);
+  }
 }
 
-.animate-gradientMove { animation: gradientMove 10s ease-in-out infinite alternate; }
-.animate-gradientMove2 { animation: gradientMove2 10s ease-in-out infinite alternate; }
-.animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
-.animate-fade-in { animation: fadeIn 0.6s ease-out both; }
-.animate-slide-left { animation: slideInLeft 0.8s ease-out both; }
+.animate-gradientMove {
+  animation: gradientMove 10s ease-in-out infinite alternate;
+}
+.animate-gradientMove2 {
+  animation: gradientMove2 10s ease-in-out infinite alternate;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out both;
+}
 
 /* Staggered animation delays */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
 
 /* 10. NAVBAR */
-header, nav {
+header,
+nav {
   background-color: var(--color-bg);
   border-color: var(--color-border);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 nav a {
@@ -206,7 +313,7 @@ nav a:hover {
 
 .gradient-bg::before,
 .gradient-bg::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
@@ -235,8 +342,14 @@ nav a:hover {
 /* gradient-bg children get z-index via Tailwind classes (relative z-10) in markup */
 
 /* 14. SECTION UTILITIES */
-.section-light { background-color: var(--color-bg); color: var(--color-text); }
-.section-card { background-color: var(--color-card); color: var(--color-text); }
+.section-light {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+.section-card {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
 
 /* Section Title — Stitch style: big, bold, with accent */
 .section-title {
@@ -257,7 +370,11 @@ nav a:hover {
   display: inline-block;
   width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 2px;
 }
 
@@ -335,8 +452,12 @@ nav a:hover {
 }
 
 /* 18. HERO UTILITIES */
-.hero-title { color: var(--color-text); }
-.hero-subtitle { color: var(--color-text-muted); }
+.hero-title {
+  color: var(--color-text);
+}
+.hero-subtitle {
+  color: var(--color-text-muted);
+}
 
 /* 19. SCROLLBAR STYLING */
 ::-webkit-scrollbar {
