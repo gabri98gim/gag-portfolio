@@ -20,5 +20,9 @@
     "react-icons": "^5.5.0",
     "tailwindcss": "^4.1.16",
     "typewriter-effect": "^2.21.0"
+  },
+  "devDependencies": {
+    "canvas": "^3.2.1",
+    "pdfjs-dist": "^4.10.38"
   }
 }

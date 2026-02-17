@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import PdfThumbnail from "./PdfThumbnail.jsx";
+
 export interface Props {
   titulo: string;
   descripcion: string;
-  imagen: string;
+  imagen: any;
   tecnologias: string[];
   demo: string;
   codigo: string;
@@ -26,6 +29,10 @@ const {
 } = Astro.props;
 
 const isLarge = size === "large";
+
+// Logic to determine if asset is a PDF or an external URL
+const isPdf = typeof imagen === "string" && imagen.toLowerCase().endsWith(".pdf");
+const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || imagen.startsWith("https"));
 ---
 
 {isLarge ? (
@@ -48,14 +55,27 @@ const isLarge = size === "large";
       </div>
     </div>
 
-    <!-- Image -->
+    <!-- Image / PDF Thumbnail -->
     <div class="absolute inset-0 top-10">
-      <img
-        src={imagen}
-        alt={`Imagen del proyecto ${titulo}`}
-        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-        loading="lazy"
-      />
+      {isPdf ? (
+        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+      ) : isExternal ? (
+        <img
+          src={imagen}
+          alt={`Imagen del proyecto ${titulo}`}
+          class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
+      ) : (
+        <Image
+          src={imagen}
+          alt={`Imagen del proyecto ${titulo}`}
+          width={1200}
+          height={600}
+          class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
+      )}
     </div>
 
     <!-- Hover Overlay -->
@@ -83,14 +103,16 @@ const isLarge = size === "large";
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-          <a
-            href={codigo}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-(--color-text-muted) hover:text-(--color-text) transition-colors text-sm font-semibold"
-          >
-            GitHub →
-          </a>
+          {codigo && codigo !== "#" && (
+            <a
+              href={codigo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-(--color-text-muted) hover:text-(--color-text) transition-colors text-sm font-semibold"
+            >
+              GitHub →
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -103,15 +125,29 @@ const isLarge = size === "large";
     class="project-card group relative rounded-2xl overflow-hidden border border-(--color-border) shadow-xl transition-all duration-300 hover:border-(--color-primary)/50 project-fade-in flex flex-col"
     style={`animation-delay: ${0.15 + index * 0.1}s;`}
   >
-    <!-- Image — grows to fill available space -->
-    <div class="flex-1 min-h-[200px] overflow-hidden">
-      <img
-        src={imagen}
-        alt={`Imagen del proyecto ${titulo}`}
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        style={`object-position: ${imagePosition || "top"};`}
-        loading="lazy"
-      />
+    <!-- Image / PDF — grows to fill available space -->
+    <div class="flex-1 min-h-[200px] overflow-hidden relative">
+      {isPdf ? (
+        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+      ) : isExternal ? (
+        <img
+          src={imagen}
+          alt={`Imagen del proyecto ${titulo}`}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={`object-position: ${imagePosition || "top"};`}
+          loading="lazy"
+        />
+      ) : (
+        <Image
+          src={imagen}
+          alt={`Imagen del proyecto ${titulo}`}
+          width={600}
+          height={400}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={`object-position: ${imagePosition || "top"};`}
+          loading="lazy"
+        />
+      )}
     </div>
 
     <!-- Glass panel sliding up on hover -->
