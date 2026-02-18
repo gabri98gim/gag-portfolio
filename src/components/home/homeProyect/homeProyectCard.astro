@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import PdfThumbnail from "../../project/PdfThumbnail.jsx";
+
 export interface Props {
   titulo: string;
   descripcion: string;
-  imagen: string;
+  imagen: any;
   tecnologias: string[];
   demo: string;
   codigo: string;
@@ -10,19 +13,40 @@ export interface Props {
 }
 
 const { titulo, descripcion, imagen, tecnologias, demo, codigo } = Astro.props;
+
+// Logic to determine if asset is a PDF or an external URL
+const isPdf =
+  typeof imagen === "string" && imagen.toLowerCase().endsWith(".pdf");
+const isExternal =
+  typeof imagen === "string" &&
+  (imagen.startsWith("http") || imagen.startsWith("https"));
 ---
 
 <div
   class="group relative flex w-full flex-col overflow-hidden rounded-2xl bg-(--color-card) border border-(--color-border) transition-all duration-500 hover:border-(--color-border-hover) hover:shadow-(--shadow-glow)"
 >
   <div
-    class="aspect-video w-full overflow-hidden border-b border-(--color-border)"
+    class="aspect-video w-full overflow-hidden border-b border-(--color-border) relative"
   >
-    <img
-      src={imagen}
-      alt={`Proyecto: ${titulo}`}
-      class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-    />
+    {
+      isPdf ? (
+        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+      ) : isExternal ? (
+        <img
+          src={imagen}
+          alt={`Proyecto: ${titulo}`}
+          class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <Image
+          src={imagen}
+          alt={`Proyecto: ${titulo}`}
+          width={800}
+          height={450}
+          class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        />
+      )
+    }
   </div>
 
   <div class="flex flex-col grow p-7">
@@ -53,19 +77,23 @@ const { titulo, descripcion, imagen, tecnologias, demo, codigo } = Astro.props;
         href={demo}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-primary flex-1 py-3 text-sm text-center"
+        class="bg-(--color-primary) hover:bg-(--color-primary-hover) text-white flex-1 py-3 text-sm text-center rounded-xl font-semibold transition-colors"
       >
         Live Demo
       </a>
 
-      <a
-        href={codigo}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-outline flex-1 py-3 text-sm text-center"
-      >
-        GitHub
-      </a>
+      {
+        codigo && codigo !== "#" && (
+          <a
+            href={codigo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-(--color-border) hover:bg-(--color-bg-elevated) text-(--color-text) flex-1 py-3 text-sm text-center rounded-xl font-semibold transition-colors"
+          >
+            GitHub
+          </a>
+        )
+      }
     </div>
   </div>
 </div>

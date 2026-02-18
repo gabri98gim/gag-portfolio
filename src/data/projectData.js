@@ -1,8 +1,9 @@
-// --- IMPORTACIÓN DE TUS IMÁGENES REALES ---
 import cineImg from "../assets/img-projects/cine.png";
 import factosImg from "../assets/img-projects/factos.png";
 import italianoImg from "../assets/img-projects/italiano.png";
 import loveoImg from "../assets/img-projects/loveo.png";
+import efimeraThumb from "../assets/img-projects/Efimera.png";
+import excusasThumb from "../assets/img-projects/Excusas.png";
 
 // --- IMPORTACIÓN DE DISEÑOS (PDFos finales) ---
 import bbvaPdf from "../assets/img-diseños-pdf/BBVA Final.pdf";
@@ -84,7 +85,7 @@ export const proyectos = [
     titulo: "EFÍMERA",
     descripcion:
       "Cortometraje | Dirección y Realización. Una exploración visual sobre la brevedad del tiempo y las emociones transitorias.",
-    imagen: "https://drive.google.com/thumbnail?id=1M-O5qs3LGaorlImEn5_JABMNQb06PVmO&sz=w1200",
+    imagen: efimeraThumb,
     tecnologias: ["Realización", "Premiere Pro", "Post-producción"],
     demo: "https://drive.google.com/file/d/1M-O5qs3LGaorlImEn5_JABMNQb06PVmO/view?usp=sharing",
     codigo: "#",
@@ -95,7 +96,7 @@ export const proyectos = [
     titulo: "ACROMATOPSIA",
     descripcion:
       "Cortometraje | Realización y Edición. Un relato audiovisual que juega con la percepción del color y la realidad.",
-    imagen: "https://drive.google.com/thumbnail?id=1oFFCmleOwAQiH7b4fMs_hJnUpoYdnmMl&sz=w1200",
+    imagen: excusasThumb,
     tecnologias: ["Realización", "AVID", "Color Grading"],
     demo: "https://drive.google.com/file/d/1oFFCmleOwAQiH7b4fMs_hJnUpoYdnmMl/view?usp=sharing",
     codigo: "#",
