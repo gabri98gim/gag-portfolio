@@ -1,4 +1,4 @@
-import cineImg from "../assets/img-projects/cine.png";
+import cineImg from "../assets/img-projects/cine.PNG";
 import factosImg from "../assets/img-projects/factos.png";
 import italianoImg from "../assets/img-projects/italiano.png";
 import loveoImg from "../assets/img-projects/loveo.png";
@@ -6,30 +6,30 @@ import efimeraThumb from "../assets/img-projects/Efimera.png";
 import excusasThumb from "../assets/img-projects/Excusas.png";
 
 // --- IMPORTACIÓN DE DISEÑOS (PDFos finales) ---
-import bbvaPdf from "../assets/img-diseños-pdf/BBVA Final.pdf";
-import bannerCarpetasPdf from "../assets/img-diseños-pdf/Banner Carpetas y Solapas Publi.pdf";
-import bannerDescuentoPdf from "../assets/img-diseños-pdf/Banner Descuento.pdf";
-import bannerImanPdf from "../assets/img-diseños-pdf/Banner Iman.pdf";
-import boutiquePdf from "../assets/img-diseños-pdf/Boutique.pdf";
-import carpetasPubliPdf from "../assets/img-diseños-pdf/Carpetas Pretroqueladas Publi.pdf";
-import carpetasCorpPdf from "../assets/img-diseños-pdf/Carpetas Pretroqueladas.pdf";
-import carpetasWebPdf from "../assets/img-diseños-pdf/Carpetas y Solapas Web.pdf";
-import cervezaPdf from "../assets/img-diseños-pdf/Cerveza.pdf";
-import chamaleonPdf from "../assets/img-diseños-pdf/Chamaleon.pdf";
-import circoPdf from "../assets/img-diseños-pdf/Circo.pdf";
-import galeriaPdf from "../assets/img-diseños-pdf/Colores vivos-Poco Gasto Galeria de Arte.pdf";
-import puzzlesPdf from "../assets/img-diseños-pdf/Colores vivos-Poco Gasto Puzzles.pdf";
-import corePdf from "../assets/img-diseños-pdf/Core - Tienda Online.pdf";
-import packagingPdf from "../assets/img-diseños-pdf/Dato Variable Caja Final.pdf";
-import ecoPdf from "../assets/img-diseños-pdf/Eco-Logic.pdf";
-import trinidadPdf from "../assets/img-diseños-pdf/Estudio Trinidad.pdf";
-import herboristeriaPdf from "../assets/img-diseños-pdf/Herboristeria.pdf";
-import imanV1Pdf from "../assets/img-diseños-pdf/Iman 1 version.pdf";
-import impricavPdf from "../assets/img-diseños-pdf/Impricav.pdf";
-import repairPdf from "../assets/img-diseños-pdf/SmartPhone Repair.pdf";
-import videojuegosPdf from "../assets/img-diseños-pdf/Tienda Videojuegos.pdf";
-import austriaPdf from "../assets/img-diseños-pdf/Visit Austria.pdf";
-import yummyPdf from "../assets/img-diseños-pdf/Yummy Delivery.pdf";
+import bbvaPdf from "../assets/img-disenos-pdf/BBVA Final.pdf";
+import bannerCarpetasPdf from "../assets/img-disenos-pdf/Banner Carpetas y Solapas Publi.pdf";
+import bannerDescuentoPdf from "../assets/img-disenos-pdf/Banner Descuento.pdf";
+import bannerImanPdf from "../assets/img-disenos-pdf/Banner Iman.pdf";
+import boutiquePdf from "../assets/img-disenos-pdf/Boutique.pdf";
+import carpetasPubliPdf from "../assets/img-disenos-pdf/Carpetas Pretroqueladas Publi.pdf";
+import carpetasCorpPdf from "../assets/img-disenos-pdf/Carpetas Pretroqueladas.pdf";
+import carpetasWebPdf from "../assets/img-disenos-pdf/Carpetas y Solapas Web.pdf";
+import cervezaPdf from "../assets/img-disenos-pdf/Cerveza.pdf";
+import chamaleonPdf from "../assets/img-disenos-pdf/Chamaleon.pdf";
+import circoPdf from "../assets/img-disenos-pdf/Circo.pdf";
+import galeriaPdf from "../assets/img-disenos-pdf/Colores vivos-Poco Gasto Galeria de Arte.pdf";
+import puzzlesPdf from "../assets/img-disenos-pdf/Colores vivos-Poco Gasto Puzzles.pdf";
+import corePdf from "../assets/img-disenos-pdf/Core - Tienda Online.pdf";
+import packagingPdf from "../assets/img-disenos-pdf/Dato Variable Caja Final.pdf";
+import ecoPdf from "../assets/img-disenos-pdf/Eco-Logic.pdf";
+import trinidadPdf from "../assets/img-disenos-pdf/Estudio Trinidad.pdf";
+import herboristeriaPdf from "../assets/img-disenos-pdf/Herboristeria.pdf";
+import imanV1Pdf from "../assets/img-disenos-pdf/Iman 1 version.pdf";
+import impricavPdf from "../assets/img-disenos-pdf/Impricav.pdf";
+import repairPdf from "../assets/img-disenos-pdf/SmartPhone Repair.pdf";
+import videojuegosPdf from "../assets/img-disenos-pdf/Tienda Videojuegos.pdf";
+import austriaPdf from "../assets/img-disenos-pdf/Visit Austria.pdf";
+import yummyPdf from "../assets/img-disenos-pdf/Yummy Delivery.pdf";
 
 export const proyectos = [
   // ══════════════════════════════════════════════════════════════════
