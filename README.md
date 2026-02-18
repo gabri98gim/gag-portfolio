@@ -1,99 +1,100 @@
 # 🎬 GAG Portfolio — Creative Frontend Developer & Filmmaker
 
-> **Donde el código se encuentra con la narrativa visual.**
+<div align="center">
+  <img src="https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+</div>
 
-Portfolio profesional que fusiona **desarrollo web**, **diseño gráfico** y **producción audiovisual** en una experiencia digital premium.
+<br />
 
-🔗 [Ver en vivo](https://gag-portfolio.vercel.app) _(próximamente)_
+> **"Donde el código se encuentra con la narrativa visual."**  
+> Un portfolio multidisciplinar que fusiona la precisión técnica del **desarrollo web** con la visión artística del **cine** y el **diseño gráfico**.
 
 ---
 
-## ✨ Características
+## 🚀 Vision General
 
-- 🌗 **Modo claro/oscuro** — Dark mode premium por defecto, light mode suave para los ojos
-- 🎨 **Diseño glassmorphism** — Tarjetas con efecto cristal, gradientes animados y micro-interacciones
-- 📂 **Proyectos filtrados** — Categorías: Full Stack, Frontend, Backend, Diseño Gráfico, Realización
-- 🔗 **Servicios enlazados** — Cada servicio redirige a los proyectos de esa categoría
-- ⌨️ **Typewriter animado** — Efecto máquina de escribir en el hero con roles profesionales
-- 📱 **Fully responsive** — Adaptado a móvil, tablet y escritorio
-- 📬 **Formulario de contacto** — Integración con Formspree para recibir mensajes directos
+Este no es solo un portfolio de código. Es una vitrina de **historias digitales**. Construido con el stack más moderno (**Astro 5 + Tailwind 4**), está diseñado para ofrecer una experiencia fluida, rápida y estéticamente impecable. Desde arquitectura web _pixel-perfect_ hasta narrativa audiovisual envolvente.
+
+✨ **[Explora el Portfolio en Vivo](https://gag-portfolio-nine.vercel.app/)**
+
+---
+
+## 🔥 Key Features
+
+- 💎 **Modern Aesthetics** — Interfaz basada en glassmorphism, gradientes dinámicos y micro-animaciones.
+- 🎭 **Professional Identity** — Sistema de roles dinámico mediante un efecto typewriter personalizado.
+- 📂 **Smart Portfolio** — Galería interactiva con filtros inteligentes por categoría (Tech, Diseño, Cine).
+- 🌓 **Adaptive Theme** — Soporte nativo para Dark/Light mode con transiciones suaves.
+- ⚡ **Turbo Performance** — Optimización al máximo gracias a las islas de Astro y carga de imágenes inteligente.
+- 📩 **Connect & Inquire** — Formulario de contacto funcional integrado con Formspree.
 
 ---
 
 ## 🛠 Tech Stack
 
-| Tecnología                                                           | Uso                                |
-| -------------------------------------------------------------------- | ---------------------------------- |
-| [Astro](https://astro.build)                                         | Framework principal, SSG           |
-| [React](https://react.dev)                                           | Componentes interactivos           |
-| [Tailwind CSS v4](https://tailwindcss.com)                           | Sistema de diseño y estilos        |
-| [TypeScript](https://typescriptlang.org)                             | Tipado en componentes              |
-| [React Icons](https://react-icons.github.io)                         | Iconografía                        |
-| [Typewriter Effect](https://www.npmjs.com/package/typewriter-effect) | Animación de texto                 |
-| [Formspree](https://formspree.io)                                    | Backend del formulario de contacto |
+| Componente       | Tecnología          | Razón                                                         |
+| :--------------- | :------------------ | :------------------------------------------------------------ |
+| **Core**         | `Astro 5.0`         | Arquitectura de islas y rendimiento estático superior.        |
+| **UI Library**   | `React 19`          | Interactividad compleja y componentes reutilizables.          |
+| **Styling**      | `Tailwind CSS v4`   | Estilado moderno mediante variables CSS y utilidades rápidas. |
+| **Icons**        | `React Icons`       | Set de iconos unificado y ligero.                             |
+| **Animations**   | `Typewriter-effect` | Engagement visual desde el primer segundo.                    |
+| **Form Backend** | `Formspree`         | Gestión de mensajes sin necesidad de servidor propio.         |
 
 ---
 
-## 📁 Estructura del proyecto
+## 🏗 Ecosistema del Proyecto
 
-```
-src/
-├── components/
-│   ├── home/          # Hero, slider, typewriter
-│   ├── about/         # AboutMe, Services, Experience, Skills
-│   ├── project/       # ProjectCard
-│   ├── commons/       # Navbar, Footer, Layout compartido
-│   └── ThemeToggle    # Cambio de tema claro/oscuro
-├── data/
-│   ├── projectData.js # Datos de los proyectos
-│   └── jobsData.js    # Experiencia laboral
-├── pages/
-│   ├── index.astro    # Landing / Home
-│   ├── about.astro    # Sobre mí
-│   ├── proyectos.astro# Galería de proyectos con filtros
-│   ├── contact.astro  # Formulario de contacto
-│   └── 404.astro      # Página de error
-├── styles/
-│   └── global.css     # Design tokens, animaciones, utilidades
-└── scripts/           # Lógica JS (tabs, filtros)
-```
-
----
-
-## 🚀 Instalación
+El corazón de este proyecto reside en su modularidad:
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/gabri98gim/gag-portfolio.git
-cd gag-portfolio
-
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Build para producción
-npm run build
+src/
+├── components/
+│   ├── home/          # Hero dinámico y carrusel de tecnologías
+│   ├── about/         # Biografía, servicios y trayectoria
+│   ├── project/       # Tarjetas inteligentes con soporte PDF y Video
+│   └── common/        # Navbar de cristal, Footer y Layout base
+├── data/              # La "Base de Datos" (Projects, Experience)
+├── pages/             # Rutas dinámicas y páginas principales
+└── styles/            # Design System (Colors, Fonts, Animations)
 ```
 
 ---
 
-## 🎯 Páginas
+## 💻 Instalación Local
 
-| Ruta         | Descripción                                     |
-| ------------ | ----------------------------------------------- |
-| `/`          | Landing con hero animado y typewriter           |
-| `/about`     | Sobre mí, servicios, experiencia y tecnologías  |
-| `/proyectos` | Galería con filtros por categoría               |
-| `/contact`   | Formulario de contacto con diseño glassmorphism |
+Si quieres explorar el código o replicar el entorno:
+
+1. **Clonar**
+   ```bash
+   git clone https://github.com/gabri98gim/gag-portfolio.git
+   ```
+2. **Dependencias**
+   ```bash
+   npm install
+   ```
+3. **Lanzar**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-## 📝 Licencia
+## 🤝 Contacto
 
-Proyecto personal de **Gabriel Andreu Gimeno**.
+¿Tienes un proyecto en mente o simplemente quieres charlar sobre diseño y código?
+
+- **Web:** [gag-portfolio.vercel.app](https://gag-portfolio.vercel.app)
+- **LinkedIn:** [Gabriel Andreu Gimeno](https://www.linkedin.com/in/gabriel-andreu-gimeno-ba674824a/)
+- **Instagram:** [@gabri98gim](https://www.instagram.com/gabri98gim/)
 
 ---
 
-Last update: 2026
+<div align="center">
+  <p>Diseñado y desarrollado con ❤️ por <b>Gabriel Andreu Gimeno</b></p>
+  <p><i>Zaragoza, España | 2026</i></p>
+</div>
