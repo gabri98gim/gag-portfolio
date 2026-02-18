@@ -4,7 +4,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 // Use a CDN worker for simplicity in Astro
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
-const PdfThumbnail = ({ pdfUrl, title }) => {
+const PdfThumbnail = ({ pdfUrl, title, position = "top", fit = "cover" }) => {
   const canvasRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -52,9 +52,9 @@ const PdfThumbnail = ({ pdfUrl, title }) => {
   }, [pdfUrl]);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 overflow-hidden">
+    <div className={`relative w-full h-full flex items-center justify-center ${fit === 'contain' ? 'bg-white p-4' : 'bg-gray-100 dark:bg-gray-800'} overflow-hidden`}>
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="w-8 h-8 border-4 border-(--color-primary) border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
@@ -67,7 +67,11 @@ const PdfThumbnail = ({ pdfUrl, title }) => {
       ) : (
         <canvas 
           ref={canvasRef} 
-          className={`w-full h-full object-cover transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}
+          style={{ 
+            objectFit: fit, 
+            objectPosition: position 
+          }}
         />
       )}
     </div>

@@ -91,6 +91,7 @@ export const proyectos = [
     codigo: "#",
     categoria: "realizacion",
     size: "standard",
+    fit: "contain",
   },
   {
     titulo: "ACROMATOPSIA",
@@ -102,20 +103,23 @@ export const proyectos = [
     codigo: "#",
     categoria: "realizacion",
     size: "standard",
+    fit: "contain",
   },
 
   // ══════════════════════════════════════════════════════════════════
   // 🎨 DISEÑO GRÁFICO (Resto)
   // ══════════════════════════════════════════════════════════════════
   {
-    titulo: "Identidad BBVA",
-    descripcion: "Refuerzo visual y adaptaciones gráficas corporativas bajo estándares de marca globales.",
+    titulo: "Bodegas Lagunilla",
+    descripcion: "Diseño de etiqueta y branding para vinos riojanos selectos de Bodegas Lagunilla.",
     imagen: bbvaPdf,
     tecnologias: ["Suite Adobe"],
     demo: bbvaPdf,
     codigo: "#",
     categoria: "diseno",
-    size: "large",
+    size: "standard",
+    imagePosition: "center",
+    fit: "contain",
   },
   {
     titulo: "Boutique Creative",
@@ -176,6 +180,8 @@ export const proyectos = [
     codigo: "#",
     categoria: "diseno",
     size: "standard",
+    imagePosition: "center",
+    fit: "contain",
   },
   {
     titulo: "UI Tienda Gaming",
@@ -196,16 +202,19 @@ export const proyectos = [
     codigo: "#",
     categoria: "diseno",
     size: "standard",
+    fit: "contain",
   },
   {
-    titulo: "Herboristería Logo",
-    descripcion: "Identidad para tienda de productos naturales con paletas de color orgánicas.",
+    titulo: "Herboristería Ordaz",
+    descripcion: "Identidad visual y logotipo para herboristería tradicional con un toque moderno y natural.",
     imagen: herboristeriaPdf,
     tecnologias: ["Suite Adobe"],
     demo: herboristeriaPdf,
     codigo: "#",
     categoria: "diseno",
     size: "standard",
+    imagePosition: "center",
+    fit: "contain",
   },
   {
     titulo: "Visit Austria",
@@ -216,6 +225,8 @@ export const proyectos = [
     codigo: "#",
     categoria: "diseno",
     size: "standard",
+    imagePosition: "center",
+    fit: "contain",
   },
   {
     titulo: "Carpeta Corporativa",
@@ -296,6 +307,8 @@ export const proyectos = [
     codigo: "#",
     categoria: "diseno",
     size: "standard",
+    imagePosition: "center",
+    fit: "contain",
   },
   {
     titulo: "Logo Impricav",

@@ -10,9 +10,20 @@ export interface Props {
   demo: string;
   codigo: string;
   index: number;
+  imagePosition?: string;
+  fit?: "cover" | "contain";
 }
 
-const { titulo, descripcion, imagen, tecnologias, demo, codigo } = Astro.props;
+const {
+  titulo,
+  descripcion,
+  imagen,
+  tecnologias,
+  demo,
+  codigo,
+  imagePosition = "top",
+  fit = "cover",
+} = Astro.props;
 
 // Logic to determine if asset is a PDF or an external URL
 const isPdf =
@@ -30,12 +41,19 @@ const isExternal =
   >
     {
       isPdf ? (
-        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+        <PdfThumbnail
+          client:visible
+          pdfUrl={imagen}
+          title={titulo}
+          position={imagePosition}
+          fit={fit}
+        />
       ) : isExternal ? (
         <img
           src={imagen}
           alt={`Proyecto: ${titulo}`}
-          class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={`object-position: ${imagePosition};`}
         />
       ) : (
         <Image
@@ -43,7 +61,8 @@ const isExternal =
           alt={`Proyecto: ${titulo}`}
           width={800}
           height={450}
-          class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={`object-position: ${imagePosition};`}
         />
       )
     }

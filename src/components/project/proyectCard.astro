@@ -13,6 +13,7 @@ export interface Props {
   index: number;
   size?: "large" | "standard";
   imagePosition?: string;
+  fit?: "cover" | "contain";
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   index,
   size = "standard",
   imagePosition,
+  fit = "cover",
 } = Astro.props;
 
 const isLarge = size === "large";
@@ -56,14 +58,15 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
     </div>
 
     <!-- Image / PDF Thumbnail -->
-    <div class="absolute inset-0 top-10">
+    <div class={`absolute inset-0 top-10 ${fit === 'contain' ? 'bg-black/95 p-8' : ''}`}>
       {isPdf ? (
-        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} position={imagePosition} fit={fit} />
       ) : isExternal ? (
         <img
           src={imagen}
           alt={`Imagen del proyecto ${titulo}`}
-          class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          class="w-full h-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition || "center"};`}
           loading="lazy"
         />
       ) : (
@@ -72,7 +75,8 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
           alt={`Imagen del proyecto ${titulo}`}
           width={1200}
           height={600}
-          class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          class="w-full h-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition || "center"};`}
           loading="lazy"
         />
       )}
@@ -126,15 +130,15 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
     style={`animation-delay: ${0.15 + index * 0.1}s;`}
   >
     <!-- Image / PDF — grows to fill available space -->
-    <div class="flex-1 min-h-[200px] overflow-hidden relative">
+    <div class={`flex-1 min-h-[200px] overflow-hidden relative ${fit === 'contain' ? 'bg-black/95 p-6' : ''}`}>
       {isPdf ? (
-        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} />
+        <PdfThumbnail client:visible pdfUrl={imagen} title={titulo} position={imagePosition} fit={fit} />
       ) : isExternal ? (
         <img
           src={imagen}
           alt={`Imagen del proyecto ${titulo}`}
-          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          style={`object-position: ${imagePosition || "top"};`}
+          class="w-full h-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition || "center"};`}
           loading="lazy"
         />
       ) : (
@@ -143,8 +147,8 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
           alt={`Imagen del proyecto ${titulo}`}
           width={600}
           height={400}
-          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          style={`object-position: ${imagePosition || "top"};`}
+          class="w-full h-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition || "center"};`}
           loading="lazy"
         />
       )}
