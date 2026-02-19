@@ -1,11 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {
-  FaLinkedinIn,
-  FaGithub,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
 const socialLinks = [
   {
@@ -14,12 +9,6 @@ const socialLinks = [
     label: "LinkedIn",
   },
   { href: "https://github.com/gabri98gim", icon: FaGithub, label: "GitHub" },
-  { href: "https://x.com/gandreu8", icon: FaXTwitter, label: "Twitter" },
-  {
-    href: "https://www.instagram.com/gabri98gim/",
-    icon: FaInstagram,
-    label: "Instagram",
-  },
 ];
 ---
 
@@ -252,6 +241,16 @@ const socialLinks = [
     </div>
   </section>
 </Layout>
+
+<script>
+  // Reset form on page show (handles 'Back' button after Formspree redirect)
+  window.addEventListener("pageshow", (event) => {
+    const form = document.querySelector("form") as HTMLFormElement;
+    if (form) {
+      form.reset();
+    }
+  });
+</script>
 
 <style>
   /* Glass panel */

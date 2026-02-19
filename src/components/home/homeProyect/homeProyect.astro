@@ -3,7 +3,7 @@ import { proyectos } from "../../../data/projectData.js";
 import ProyectCard from "./homeProyectCard.astro";
 ---
 
-<section class="py-28">
+<section class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
       <span class="accent-line mx-auto mb-6 block"></span>
@@ -21,6 +21,15 @@ import ProyectCard from "./homeProyectCard.astro";
           .slice(0, 3)
           .map((proyecto, index) => <ProyectCard {...proyecto} index={index} />)
       }
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href="/proyectos"
+        class="btn-primary px-10 py-4 text-sm font-bold inline-flex"
+      >
+        Ver todos los proyectos
+      </a>
     </div>
   </div>
 </section>

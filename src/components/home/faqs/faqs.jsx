@@ -54,7 +54,7 @@ const SkillsList = () => {
   };
 
   return (
-    <div className="flex flex-col items-center px-6 text-left py-28">
+    <div className="flex flex-col items-center px-6 text-left pt-10 pb-20">
       <div className="mx-auto w-full max-w-3xl">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">

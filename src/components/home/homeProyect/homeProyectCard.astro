@@ -11,7 +11,7 @@ export interface Props {
   codigo: string;
   index: number;
   imagePosition?: string;
-  fit?: "cover" | "contain";
+  fit?: "cover" | "contain" | string;
 }
 
 const {
@@ -21,7 +21,7 @@ const {
   tecnologias,
   demo,
   codigo,
-  imagePosition = "top",
+  imagePosition = "center",
   fit = "cover",
 } = Astro.props;
 
@@ -37,7 +37,7 @@ const isExternal =
   class="group relative flex w-full flex-col overflow-hidden rounded-2xl bg-(--color-card) border border-(--color-border) transition-all duration-500 hover:border-(--color-border-hover) hover:shadow-(--shadow-glow)"
 >
   <div
-    class="aspect-video w-full overflow-hidden border-b border-(--color-border) relative"
+    class={`aspect-video w-full overflow-hidden border-b border-(--color-border) relative ${fit === "contain" ? "bg-black/95 p-4" : ""}`}
   >
     {
       isPdf ? (
@@ -46,14 +46,14 @@ const isExternal =
           pdfUrl={imagen}
           title={titulo}
           position={imagePosition}
-          fit={fit}
+          fit={fit as any}
         />
       ) : isExternal ? (
         <img
           src={imagen}
           alt={`Proyecto: ${titulo}`}
-          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          style={`object-position: ${imagePosition};`}
+          class="h-full w-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition};`}
         />
       ) : (
         <Image
@@ -61,8 +61,8 @@ const isExternal =
           alt={`Proyecto: ${titulo}`}
           width={800}
           height={450}
-          class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          style={`object-position: ${imagePosition};`}
+          class="h-full w-full transition-transform duration-700 group-hover:scale-105"
+          style={`object-fit: ${fit}; object-position: ${imagePosition};`}
         />
       )
     }

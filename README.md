@@ -90,7 +90,6 @@ Si quieres explorar el código o replicar el entorno:
 
 - **Web:** [gag-portfolio.vercel.app](https://gag-portfolio.vercel.app)
 - **LinkedIn:** [Gabriel Andreu Gimeno](https://www.linkedin.com/in/gabriel-andreu-gimeno-ba674824a/)
-- **Instagram:** [@gabri98gim](https://www.instagram.com/gabri98gim/)
 
 ---
 
