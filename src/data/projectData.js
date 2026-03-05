@@ -4,6 +4,7 @@ import italianoImg from "../assets/img-projects/italiano.png";
 import loveoImg from "../assets/img-projects/loveo.png";
 import efimeraThumb from "../assets/img-projects/Efimera.png";
 import excusasThumb from "../assets/img-projects/Excusas.png";
+import verticeImg from "../assets/img-projects/vertice.PNG";
 
 // --- IMPORTACIÓN DE DISEÑOS (PDFos finales) ---
 import bbvaPdf from "../assets/img-disenos-pdf/BBVA Final.pdf";
@@ -35,6 +36,17 @@ export const proyectos = [
   // ══════════════════════════════════════════════════════════════════
   // 🖥️ PRIORIDAD TECH: FRONTEND / BACKEND / FULLSTACK
   // ══════════════════════════════════════════════════════════════════
+  {
+    titulo: "Vertice Studio Manager",
+    descripcion:
+      "Dashboard integral para la gestión de estudios creativos con Angular 19. Incluye gestión de flujos de trabajo, analíticas avanzadas con Chart.js, exportación a PDF y autenticación segura con Supabase.",
+    imagen: verticeImg,
+    tecnologias: ["Angular 19", "Tailwind v4", "Supabase", "PostgreSQL", "Chart.js", "jsPDF"],
+    demo: "https://vertice-studio-manager-dashboard.vercel.app/",
+    codigo: "https://github.com/gabri98gim/Vertice-Studio-Manager-Dashboard",
+    categoria: "fullstack,frontend,backend",
+    size: "large",
+  },
   {
     titulo: "Factos",
     descripcion:

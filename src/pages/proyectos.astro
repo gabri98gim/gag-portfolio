@@ -191,8 +191,10 @@ import { proyectos } from "../data/projectData.js";
       cards = Array.from(document.querySelectorAll("[data-index]"));
 
       const filteredCards = cards.filter((card) => {
-        const categoria = (card.dataset.categoria ?? "").toLowerCase();
-        return normalized === "all" || categoria === normalized;
+        const categorias = (card.dataset.categoria ?? "")
+          .toLowerCase()
+          .split(",");
+        return normalized === "all" || categorias.includes(normalized);
       });
 
       cards.forEach((c) => hideCard(c));
