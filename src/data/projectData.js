@@ -5,6 +5,8 @@ import loveoImg from "../assets/img-projects/loveo.png";
 import efimeraThumb from "../assets/img-projects/Efimera.png";
 import excusasThumb from "../assets/img-projects/Excusas.png";
 import verticeImg from "../assets/img-projects/vertice.PNG";
+import spectralImg from "../assets/img-projects/spectral.PNG";
+import typeMorphImg from "../assets/img-projects/typemorph.PNG";
 
 // --- IMPORTACIÓN DE DISEÑOS (PDFos finales) ---
 import bbvaPdf from "../assets/img-disenos-pdf/BBVA Final.pdf";
@@ -46,6 +48,38 @@ export const proyectos = [
     codigo: "https://github.com/gabri98gim/Vertice-Studio-Manager-Dashboard",
     categoria: "fullstack,frontend,backend",
     size: "large",
+  },
+  {
+    titulo: "Spectral",
+    descripcion:
+      "Experiencia visual inmersiva de diseño generativo. Construida con JavaScript puro y Vite, explorando gradientes dinámicos y manipulación de color.",
+    imagen: spectralImg,
+    tecnologias: ["JavaScript", "Vite", "Tailwind CSS", "Vanilla CSS"],
+    demo: "https://spectral-jet.vercel.app/",
+    codigo: "https://github.com/gabri98gim/spectral",
+    categoria: "frontend",
+    size: "large",
+    fit: "contain",
+    imagePosition: "top",
+  },
+  {
+    titulo: "TypeMorph",
+    descripcion:
+      "Herramienta de tipografía cinética con parseo binario de fuentes manual (tablas fvar/name) y registro dinámico mediante FontFace API.",
+    imagen: typeMorphImg,
+    tecnologias: [
+      "HTML5",
+      "Tailwind CSS",
+      "Vanilla JS",
+      "FontFace API",
+      "Binary Font Parsing",
+    ],
+    demo: "https://typemorph.vercel.app/",
+    codigo: "https://github.com/gabri98gim/typemorph",
+    categoria: "frontend",
+    size: "large",
+    fit: "contain",
+    imagePosition: "top",
   },
   {
     titulo: "Factos",

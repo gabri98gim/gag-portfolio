@@ -35,6 +35,14 @@ const isLarge = size === "large";
 // Logic to determine if asset is a PDF or an external URL
 const isPdf = typeof imagen === "string" && imagen.toLowerCase().endsWith(".pdf");
 const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || imagen.startsWith("https"));
+
+const showCode =
+  codigo &&
+  codigo !== "#" &&
+  categoria &&
+  (categoria.includes("frontend") ||
+    categoria.includes("backend") ||
+    categoria.includes("fullstack"));
 ---
 
 {isLarge ? (
@@ -107,7 +115,7 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-          {codigo && codigo !== "#" && (
+          {showCode && (
             <a
               href={codigo}
               target="_blank"
@@ -184,14 +192,16 @@ const isExternal = typeof imagen === "string" && (imagen.startsWith("http") || i
         <!-- Hidden until hover -->
         <div class="mt-4 pt-4 border-t border-(--color-border) opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
           <p class="text-xs text-(--color-text-muted) line-clamp-2 mb-3">{descripcion}</p>
-          <a
-            href={codigo}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-xs font-bold text-(--color-primary) uppercase tracking-wider hover:text-(--color-text) transition-colors"
-          >
-            Ver Código
-          </a>
+          {showCode && (
+            <a
+              href={codigo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-bold text-(--color-primary) uppercase tracking-wider hover:text-(--color-text) transition-colors"
+            >
+              Ver Código
+            </a>
+          )}
         </div>
       </div>
     </div>
